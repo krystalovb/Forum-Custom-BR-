@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         🌌 GUDIN SYSTEM: Project Infinity
 // @namespace    http://tampermonkey.net/
-// @version      17.6.16
+// @version      17.6.17
 // @description  Полный визуальный редизайн форума Black Russia. Выбор обоев, плавные анимации, оптимизация интерфейса и гибкая настройка под себя.
 // @author       Gudin
 // @match        https://forum.blackrussia.online/*
@@ -23,7 +23,7 @@
 (function() {
     'use strict';
 
-class Gudin_Engine_Observer {
+class GudinObserver {
     constructor() {
         this.observers = new Set();
         this.observer = new MutationObserver(this.handleMutations.bind(this));
@@ -43,11 +43,11 @@ class Gudin_Engine_Observer {
         }
     }
 }
-    const globalGudin_Engine_Observer = new Gudin_Engine_Observer();
+    const globalGudinObserver = new GudinObserver();
     const STYLE_ID = 'blackrussia-custom-style';
     const WELCOME_SCREEN_ID = 'br-style-welcome-screen';
     const SCRIPT_VERSION = '17.6.16';
-    const PANEL_ID = 'gudin-hub-main';
+    const PANEL_ID = 'gudin-system-menu';
     const BOTTOM_NAV_ID = 'blackrussia-bottom-nav-bar';
     const CLOCK_ID = 'br-style-clock';
     const STYLE_ICON_ID = 'br-style-toggle-icon';
@@ -220,7 +220,7 @@ if(['animatedGradientSpeed','avatarBorderSpeed','pulsatingNickSpeed','uiAnimatio
         }
     }
 
-    function render_Infinity_Theme(settings) {
+    function applyGudinDesign(settings) {
         const selectedFontObj = availableFonts.find(f => f.value === settings.fontFamily);
         if (selectedFontObj && selectedFontObj.url) {
             const fontLinkId = 'br-custom-font-loader';
@@ -1738,7 +1738,7 @@ forumCss += `
         slider.style.backgroundPosition = 'center';
     }
 
-    const Infinity_Interface = {
+    const GudinInterface = {
         _safeDecode: (str) => decodeURIComponent(escape(atob(str))),
         helpers: {
             slider: (id, key, label, min, max, step, unit = '') => `
@@ -2004,7 +2004,7 @@ forumCss += `
                 else value = target.value;
 
                 currentSettings[key] = value;
-                render_Infinity_Theme(currentSettings);
+                applyGudinDesign(currentSettings);
                 manageVisualEffects(currentSettings);
                 updateBottomNavBarContent(currentSettings);
             }, 50);
@@ -2061,10 +2061,10 @@ forumCss += `
         panelWrapper.appendChild(panelDiv);
 
         try {
-            panelDiv.innerHTML = Infinity_Interface.getHTML();
+            panelDiv.innerHTML = GudinInterface.getHTML();
             document.body.appendChild(panelWrapper);
             settingsPanel = panelDiv;
-            Infinity_Interface.attachEvents(panelDiv);
+            GudinInterface.attachEvents(panelDiv);
 
             const galleryGrid = panelDiv.querySelector('#br-gallery-grid');
             if (galleryGrid && typeof WALLPAPER_GALLERY !== 'undefined') {
@@ -2233,7 +2233,7 @@ forumCss += `
                                 setChk('s_enableGradient', false); setChk('s_enableEdge', true); setChk('s_enableRounding', true);
                                 setVal('s_bgColor', bg); setVal('s_edgeColor', bo); setVal('s_borderRadius', parseInt(rd));
                             }
-                            await saveSettings(settings); render_Infinity_Theme(settings); updateBottomNavBarContent(settings); manageVisualEffects(settings);
+                            await saveSettings(settings); applyGudinDesign(settings); updateBottomNavBarContent(settings); manageVisualEffects(settings);
                             if (!document.getElementById(STYLE_ICON_ID)) addSettingsIconHTML();
                             showToast('✅ Дизайн адаптирован!', 'success'); document.getElementById(modalId).remove(); closePanel();
                         };
@@ -2265,7 +2265,7 @@ forumCss += `
         const success = await saveSettings(settingsToReset);
         if (success) {
             openPanel();
-            render_Infinity_Theme(currentSettings);
+            applyGudinDesign(currentSettings);
             updateBottomNavBarContent(currentSettings);
             manageVisualEffects(currentSettings);
             handleScroll();
@@ -2533,7 +2533,7 @@ forumCss += `
                         const success = await saveSettings(settingsToUpdate);
                         if (success) {
                             tempSettingsSnapshot = null;
-                            render_Infinity_Theme(currentSettings);
+                            applyGudinDesign(currentSettings);
                             updateBottomNavBarContent(currentSettings);
                             manageVisualEffects(currentSettings);
                             handleScroll();
@@ -2585,7 +2585,7 @@ forumCss += `
                     }
                 });
                  settingsPanel.querySelectorAll('input[type="range"]').forEach(updateSliderValue);
-                render_Infinity_Theme(currentSettings);
+                applyGudinDesign(currentSettings);
                 updateBottomNavBarContent(currentSettings);
                 manageVisualEffects(currentSettings);
                 handleScroll();
@@ -2658,7 +2658,7 @@ forumCss += `
              bgImageDataUri: ''
             });
          if (success) {
-             render_Infinity_Theme(currentSettings);
+             applyGudinDesign(currentSettings);
              const bgStatus = settingsPanel.querySelector('#bg-status');
              if(bgStatus) bgStatus.textContent = 'Фон не задан.';
              if (clearBgBtn) {
@@ -3467,7 +3467,7 @@ if (count > 0) {
 `;
 
     await saveSettings(newSettings);
-    render_Infinity_Theme(newSettings);
+    applyGudinDesign(newSettings);
     updateBottomNavBarContent(newSettings);
     showToast('✅ Успешно! Стиль адаптирован.', 'success');
     close();
@@ -3718,7 +3718,7 @@ if (!isValidEffectType(settings.effectType) || settings.effectType === 'none') {
             }
             .br-spotlight:hover::after { opacity: 1; }
 
-       #gudin-hub-main, .br-modal-window, .br-toast, .br-bottom-nav-bar { font-family: var(--br-font-family, 'Manrope', sans-serif) !important;
+       #gudin-system-menu, .br-modal-window, .br-toast, .br-bottom-nav-bar { font-family: var(--br-font-family, 'Manrope', sans-serif) !important;
 letter-spacing: 0.02em; }
 
             @keyframes br-morph {
@@ -4433,7 +4433,7 @@ staticCss += `
                     -webkit-overflow-scrolling: touch;
                 }
 
-#gudin-hub-main {
+#gudin-system-menu {
     background-color: #09090b !important;
     background-image: radial-gradient(circle at 50% 0%, rgba(30, 35, 50, 0.3) 0%, transparent 70%) !important;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 60px rgba(0, 0, 0, 0.95) !important;
@@ -4445,7 +4445,7 @@ staticCss += `
 }
 
 @media (max-width: 768px) {
-    #gudin-hub-main {
+    #gudin-system-menu {
         animation: br-mobile-slide 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
         transform-origin: bottom center !important;
         border-radius: 20px 20px 0 0 !important;
@@ -5243,7 +5243,7 @@ staticCss += `
 
 let cssMobile = `
                         @media screen and (max-width: 768px) {
-                        #gudin-hub-main {
+                        #gudin-system-menu {
                         width: 100% !important;
                         height: 100% !important;
                         max-height: 100% !important;
@@ -5272,7 +5272,7 @@ let cssMobile = `
                         display: grid;
                     }
 
-#gudin-hub-main[data-view="page"] .br-hub-grid {
+#gudin-system-menu[data-view="page"] .br-hub-grid {
     display: none !important;
 }
                    .br-hub-card:last-child:nth-child(odd) {
@@ -5506,7 +5506,7 @@ let cssMobile = `
             const status = settingsPanel.querySelector('#my-username-status');
             if (status) status.textContent = `Ваш ник: ${myUsername}`;
         }
-        render_Infinity_Theme(currentSettings);
+        applyGudinDesign(currentSettings);
         handleDynamicWelcome();
     }
 }
@@ -5517,14 +5517,14 @@ let cssMobile = `
         if (firstPost) {
             threadAuthor = firstPost.dataset.author;
             console.log(`[BR Style] Автор темы определен: ${threadAuthor}`);
-            render_Infinity_Theme(currentSettings);
+            applyGudinDesign(currentSettings);
             return;
         }
         const profileUsername = document.querySelector('.p-title-value');
         if (profileUsername && document.body.classList.contains('page--member-view')) {
              threadAuthor = profileUsername.textContent.trim();
              console.log(`[BR Style] Автор темы (на странице профиля): ${threadAuthor}`);
-             render_Infinity_Theme(currentSettings);
+             applyGudinDesign(currentSettings);
              return;
         }
     }
@@ -7148,7 +7148,7 @@ this.state.modal = {
                     currentSettings = { ...currentSettings, ...contextPresetData };
                 }
             }
-            render_Infinity_Theme(currentSettings);
+            applyGudinDesign(currentSettings);
 
             const showContent = () => {
                 if (antiFouc) {
@@ -7177,7 +7177,7 @@ this.state.modal = {
 
                 setTimeout(() => {
                     injectStaticStyles();
-                    render_Infinity_Theme(currentSettings);
+                    applyGudinDesign(currentSettings);
                     
                     const overlay = document.querySelector('.br-page-exit-overlay');
                     if (overlay) {
@@ -7342,11 +7342,11 @@ this.state.modal = {
                     runOdometer();
 
                     findAndAttachUploader();
-                    globalGudin_Engine_Observer.subscribe((mutation) => {
+                    globalGudinObserver.subscribe((mutation) => {
     findMyUsername();
     observeNewNodes([mutation]);
 });
-globalGudin_Engine_Observer.start();
+globalGudinObserver.start();
                 });
                 const seenVersion = await GM_getValue('br_style_seen_version', '0.0.0');
                 if (seenVersion !== SCRIPT_VERSION) {
