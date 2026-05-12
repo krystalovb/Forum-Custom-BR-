@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         🌌 GUDIN INFINITY SYSTEM
+// @name         🌌 GUDIN SYSTEM: Project Infinity
 // @namespace    http://tampermonkey.net/
 // @version      17.6.16
 // @description  Полный визуальный редизайн форума Black Russia. Выбор обоев, плавные анимации, оптимизация интерфейса и гибкая настройка под себя.
@@ -23,7 +23,7 @@
 (function() {
     'use strict';
 
-class NexusObserver {
+class Gudin_Engine_Observer {
     constructor() {
         this.observers = new Set();
         this.observer = new MutationObserver(this.handleMutations.bind(this));
@@ -43,11 +43,11 @@ class NexusObserver {
         }
     }
 }
-    const globalNexusObserver = new NexusObserver();
-    const STYLE_ID = 'gudin-infinity-styles';
+    const globalGudin_Engine_Observer = new Gudin_Engine_Observer();
+    const STYLE_ID = 'blackrussia-custom-style';
     const WELCOME_SCREEN_ID = 'br-style-welcome-screen';
     const SCRIPT_VERSION = '17.6.16';
-    const PANEL_ID = 'gudin-system-root';
+    const PANEL_ID = 'gudin-hub-main';
     const BOTTOM_NAV_ID = 'blackrussia-bottom-nav-bar';
     const CLOCK_ID = 'br-style-clock';
     const STYLE_ICON_ID = 'br-style-toggle-icon';
@@ -66,7 +66,7 @@ class NexusObserver {
 "<i class='fas fa-tree'></i> Природа":["https://i.postimg.cc/fThHC5J9/0185acd4ab82d25d60eef415adf19a2f.jpg","https://i.postimg.cc/BQGhpNX4/30028eb3ab96fa9fa4c361a1481f4952.jpg","https://i.postimg.cc/YqwXR8hv/7bd2995d3f3cb531afd718b714426ac9.jpg","https://i.postimg.cc/SNpZdVJz/99dedb1c832c9c01bbffe979ac0298b5.jpg","https://i.postimg.cc/wTdW2F7y/b3a35bba489d6306b454d8b089e1e4bd.jpg","https://i.postimg.cc/Prk6yKPQ/c679a199d8f22d305b12ecf0ba7f0085-(1).jpg","https://i.postimg.cc/Prk6yKPb/c80f1dfbd2605f7251c6337de63afba2.jpg","https://i.postimg.cc/hPqCsMf9/d0d55c3c2dcd506fd0e1fab4cff6303e.jpg","https://i.postimg.cc/WbP98Sh6/db80a3e81622370d4add365252121345.jpg","https://i.postimg.cc/8kfmfYmC/2d332406197d20278a6add33a10c7507.jpg","https://i.postimg.cc/PfvQv7Qx/469276dcef747a64f7852f8f7a0b94fb.jpg","https://i.postimg.cc/XNBkBPkq/9462c11f99d851e2133b1b2474e5f14b.jpg","https://i.postimg.cc/zDHFHQF5/f5a524b0d731a3a15e5700316b1c4cbd.jpg","https://i.postimg.cc/Y2LzLPzC/fc63221ccd2f821d0d10312ab9a917c0.jpg","https://i.postimg.cc/jdPVcZts/07a244796226ce7b18d994cdb5c676dc.jpg","https://i.postimg.cc/J4ZwxPmx/0880a8943b1a4a68e00d74255d08b242.jpg","https://i.postimg.cc/tCW0k2yD/0bd364d1bafd05f8a319574118c8127d-(1).jpg","https://i.postimg.cc/15wxBJsm/0f3efb60fe8a7ee23408471c10494803.jpg","https://i.postimg.cc/65nscYwP/1044297b290600b762afb82c15bae15c.jpg","https://i.postimg.cc/NfmhDpYP/1a4baac8a11bb3a0e9affef725518ba4.jpg","https://i.postimg.cc/3rP52PMf/1aed27558f343f06c5e4ac09d9f809ae.jpg","https://i.postimg.cc/dQzPGzM3/25bd6fd4c7a3788993548eba635101ca.jpg","https://i.postimg.cc/28hpG2rj/2a6ac84ccb57f9fefe2798dfbde25319.jpg","https://i.postimg.cc/fTm4CBZ6/2b62da001ec93a3c56748aac28b5d62b.jpg","https://i.postimg.cc/Vs3QX3yH/302b4fc779b7ba571e985b8594d88af1.jpg","https://i.postimg.cc/h4HWVHF0/37ef3ecdd7290c544d3f985da3523a66.jpg","https://i.postimg.cc/SQwFcw0r/3be529306ec559e6ccfa801b34b0d09f.jpg","https://i.postimg.cc/RCj5wjrq/546d58a69d51b5525cd97a62395ff7fc.jpg","https://i.postimg.cc/7Pp8Spvg/64de71a19c72c32c4cbcbbb0a08dad13.jpg","https://i.postimg.cc/hPTFspct/656d41426bc16d1bba435e1c6bf8cdd6.jpg","https://i.postimg.cc/02Dgncx0/6e81f9309ca7c329754b069a77c45acd.jpg","https://i.postimg.cc/zXKm708Y/77a7713d630a2765a189fd1ff60f98c0.jpg","https://i.postimg.cc/WbgR8Xj6/77ffa189c556187d1aca079e0248c473.jpg","https://i.postimg.cc/xjkVJ9Zz/7ec94f09c0400795ff8c600f3c21a7d1.jpg","https://i.postimg.cc/gcfF3f9x/871f07adb56b7dc714fd729c6166e6f3.jpg","https://i.postimg.cc/jqG0yGV6/880435d08da4f6553ed9b561a1ffbf4a.jpg","https://i.postimg.cc/XNTS9TMP/884179968ac3a009a2df453ea3fd4c8d.jpg","https://i.postimg.cc/sD7FmwyJ/92b6237e0a7f2888768c4cf1fa43277d.jpg","https://i.postimg.cc/jqG0yGV8/9bebf25f4b390925d133d7831d4f2164.jpg","https://i.postimg.cc/Dftk1tVj/a10b2a4ed36974434fca78f68fb3d585.jpg","https://i.postimg.cc/fW6nY643/b607d0645b48424aa8f1ca7a9507c4fc.jpg","https://i.postimg.cc/J4ZwxPmp/b8ed4156118706620fee2e60065b8b91.jpg","https://i.postimg.cc/L6LdDNRN/b95cd8439fc6b6ebf1b91ee3bef02c54.jpg","https://i.postimg.cc/KcdStdXL/c158aa687941766bb9289c9011f5d5f4.jpg","https://i.postimg.cc/ZKpkHV4J/cbb52a882105cf814a0a3ed2168eef37.jpg","https://i.postimg.cc/gk89sNmF/d42730f8e96a8e329eee76ecd1e0af1c.jpg","https://i.postimg.cc/9Xv5yv3b/d68de7971400377b0881565883e249bf.jpg","https://i.postimg.cc/zD9ZT9mK/d891e51065322a04a50d661ab6fb470c.jpg","https://i.postimg.cc/sD7FmwyN/db4dd589be056ab2b2191423f6f9e43c.jpg","https://i.postimg.cc/pXzNCqxw/e8052342a0eda329224eabded4fd7653.jpg","https://i.postimg.cc/GhG0Kqdd/ec73692ab65c02cd2df2ede2921136a1.jpg","https://i.postimg.cc/Njc3zmjh/efc090eda495242466ff40e0d3fc5071.jpg","https://i.postimg.cc/tCW0k2yv/f7f2ef062768ce8c6ab76eeb7dec58ad.jpg","https://i.postimg.cc/3JmM1nYJ/ff0f47f7c359584ff3d6fad6d6f09957.jpg"],
 "<i class='fas fa-snowflake'></i> Новый год":["https://i.postimg.cc/6qx2vMtP/358a87e9957fb2f8ca9dfd6a5fe67851.jpg","https://i.postimg.cc/d3cky5JQ/42fc33a3f381c0d828b89c70d95fca04.jpg","https://i.postimg.cc/brfDtmqX/51c5feacfee4e9f4a2a1792f9db8cd91.jpg","https://i.postimg.cc/Xq6GCs41/83b13dbfa450907a40ac3cf32549ab71.jpg","https://i.postimg.cc/C1qn53py/87d19b7e6d86e5133303770fe46dc9e1.jpg","https://i.postimg.cc/D03JXxnM/991602375ac130dc5a043fc76d2ff221.jpg","https://i.postimg.cc/sxCQhT3D/a5bc068f9e5010308334d36411147583.jpg","https://i.postimg.cc/hvRzd2cH/a9de41f2b5e45a873b1327ce1b37ef28.jpg","https://i.postimg.cc/Xq6GCsnV/adab9363d1771d6f3f4872d0ceb056f6.jpg","https://i.postimg.cc/90HR7LCN/dbcf6265bb574a238ca1da34513de917.jpg","https://i.postimg.cc/NFv9HdBZ/dfc77c71895d4f004c0687bf3c4d4801.jpg","https://i.postimg.cc/Gtn8yXbw/f3e030c90ddb913650964ce6cfc0e1d8.jpg"],
 "<i class='fas fa-city'></i> Город":["https://i.postimg.cc/50Ljb8LG/15020ac296aa3ab8b8da46db65777710-(1).jpg","https://i.postimg.cc/j5PCtyPv/182f03ba7db4be84edda6fdc52f5b6a7.jpg","https://i.postimg.cc/JnZtMjZ2/5b10b689b889be48a61e419c7534ad40.jpg","https://i.postimg.cc/JnZtMjZp/5d3e6f3b56d7530d57e6cc76bbb8e37f.jpg","https://i.postimg.cc/tTW7pFWw/5e22910a69edb226b865bbafa18a285c.jpg","https://i.postimg.cc/vBfDb5f3/802a726c4e09ef60773b6e9b5d334da7.jpg","https://i.postimg.cc/Qt1Vhc1J/86e07779c2ea825ca3ad7c185a08d2a6.jpg","https://i.postimg.cc/k4KDqWKs/c57fd23ca8031721d6c176afbb9f7182.jpg","https://i.postimg.cc/Qt1Vhc1z/d6880e813d0cee6298e7e16cfbe5d192.jpg"],
-"<i class='fas fa-ghost'></i> Аниме":["https://i.postimg.cc/LsZ83jCg/091472f1ecb725e6ac371faea4ffbebe.jpg","https://i.postimg.cc/KYg8DtqP/1c9fe641e56e8a86cf588be30cb8c74d.jpg","https://i.postimg.cc/3wDxF2Sp/20f116c27cfb3bfc105a7f918b1f2bc8.jpg","https://i.postimg.cc/Zqy5x67R/33d13e57b4d58f1c7b4f67e91b194774.jpg","https://i.postimg.cc/CKfxsbPK/4a99d606ecdcb8972504cf41fe47cc2b.jpg","https://i.postimg.cc/Pq85Q13X/5de4f7a34b32ad89ae56b0ba7a1b82c4.jpg","https://i.postimg.cc/xdb13Lx8/6fb485c2ffb3c57a2fd416fc9830f060.jpg","https://i.postimg.cc/hG7t1Vyt/8b0d7db4f7899489c7c8f2be3a6aea80.jpg","https://i.postimg.cc/VNbkWXGr/8dc2f6fda9f6c1f68fa36671bce31ef6.jpg","https://i.postimg.cc/XvyYk9Hd/c83aa4cdbff2241148e27d99d8180485.jpg","https://i.postimg.cc/vm6Zt5qn/e48cb63a72d65419b05229ba8cdab4e2.jpg","https://i.postimg.cc/k5tgvW1W/fb6aefae8686b08cc6fcf67613d8f7da.jpg","https://i.postimg.cc/rmM2R4vq/037871995e93b6a628110a6e2514379e.jpg","https://i.postimg.cc/cH0Gt3VG/14ea9b63668d521a1024e986c4bec707.jpg","https://i.postimg.cc/Y2LzLPzC/2d65eec34a18847d59591490f41cdb77.jpg","https://i.postimg.cc/NMBv2XWw/3327ac2c881524bebcb7c77c24c85fd5.jpg","https://i.postimg.cc/cH0Gt3Vq/3b64cac23b23a01c24eca1d5652adb97.jpg","https://i.postimg.cc/9MCHw9vh/52ba18f5d2a4a7fae730177e862d4eb3.jpg","https://i.postimg.cc/FRNXkSwW/7966fd70c891a9d00319ddf4800e80c6.jpg","https://i.postimg.cc/QthZK7RD/8a29c6d382f48b3dd5383eff67413f65.jpg","https://i.postimg.cc/zB8YHh49/b8593e6d4ccb79212e52a3357157350d.jpg","https://i.postimg.cc/0QP1KSLk/be394c425ab59b37259f8e582af4ba92.jpg","https://i.postimg.cc/DZn34Gtn/c5c1ce89f8eb88b5d3ad494a8f4c3b30.jpg","https://i.postimg.cc/Twfv5bZR/d400dcdb653b74ae19834a089508bf81.jpg","https://i.postimg.cc/63tx4ZFk/da698024f3af035bf8f84c01810bfe80.jpg","https://i.postimg.cc/W3TcqZx8/e72f6d9de0503ea952fbdd07e655f016-(1).jpg","https://i.postimg.cc/d1wcZCgg/f70de7b94e14a65578facc8f9d18f4bf.jpg","https://i.postimg.cc/d1wcZCgN/f8337684ee6984b2198dacee61479183.jpg","https://i.postimg.cc/fLDQSd1H/fa98fb37dd17e516663d8b4aad6894f4.jpg"]};let settingsPanel=null;let settingsIcon=null;let bottomNavElement=null;let clockElement=null;let effectsContainer=null;let toastContainer=null;let myUsername=null;let domObserver=null;let scrollObserver=null;let scrollIndicatorElement=null;let activeConfig={};let tempSettingsSnapshot=null;let lastScrollTop=0;let threadAuthor=null;let brWorker=null;
+"<i class='fas fa-ghost'></i> Аниме":["https://i.postimg.cc/LsZ83jCg/091472f1ecb725e6ac371faea4ffbebe.jpg","https://i.postimg.cc/KYg8DtqP/1c9fe641e56e8a86cf588be30cb8c74d.jpg","https://i.postimg.cc/3wDxF2Sp/20f116c27cfb3bfc105a7f918b1f2bc8.jpg","https://i.postimg.cc/Zqy5x67R/33d13e57b4d58f1c7b4f67e91b194774.jpg","https://i.postimg.cc/CKfxsbPK/4a99d606ecdcb8972504cf41fe47cc2b.jpg","https://i.postimg.cc/Pq85Q13X/5de4f7a34b32ad89ae56b0ba7a1b82c4.jpg","https://i.postimg.cc/xdb13Lx8/6fb485c2ffb3c57a2fd416fc9830f060.jpg","https://i.postimg.cc/hG7t1Vyt/8b0d7db4f7899489c7c8f2be3a6aea80.jpg","https://i.postimg.cc/VNbkWXGr/8dc2f6fda9f6c1f68fa36671bce31ef6.jpg","https://i.postimg.cc/XvyYk9Hd/c83aa4cdbff2241148e27d99d8180485.jpg","https://i.postimg.cc/vm6Zt5qn/e48cb63a72d65419b05229ba8cdab4e2.jpg","https://i.postimg.cc/k5tgvW1W/fb6aefae8686b08cc6fcf67613d8f7da.jpg","https://i.postimg.cc/rmM2R4vq/037871995e93b6a628110a6e2514379e.jpg","https://i.postimg.cc/cH0Gt3VG/14ea9b63668d521a1024e986c4bec707.jpg","https://i.postimg.cc/Y2LzLPzC/2d65eec34a18847d59591490f41cdb77.jpg","https://i.postimg.cc/NMBv2XWw/3327ac2c881524bebcb7c77c24c85fd5.jpg","https://i.postimg.cc/cH0Gt3Vq/3b64cac23b23a01c24eca1d5652adb97.jpg","https://i.postimg.cc/9MCHw9vh/52ba18f5d2a4a7fae730177e862d4eb3.jpg","https://i.postimg.cc/FRNXkSwW/7966fd70c891a9d00319ddf4800e80c6.jpg","https://i.postimg.cc/QthZK7RD/8a29c6d382f48b3dd5383eff67413f65.jpg","https://i.postimg.cc/zB8YHh49/b8593e6d4ccb79212e52a3357157350d.jpg","https://i.postimg.cc/0QP1KSLk/be394c425ab59b37259f8e582af4ba92.jpg","https://i.postimg.cc/DZn34Gtn/c5c1ce89f8eb88b5d3ad494a8f4c3b30.jpg","https://i.postimg.cc/Twfv5bZR/d400dcdb653b74ae19834a089508bf81.jpg","https://i.postimg.cc/63tx4ZFk/da698024f3af035bf8f84c01810bfe80.jpg","https://i.postimg.cc/W3TcqZx8/e72f6d9de0503ea952fbdd07e655f016-(1).jpg","https://i.postimg.cc/d1wcZCgg/f70de7b94e14a65578facc8f9d18f4bf.jpg","https://i.postimg.cc/d1wcZCgN/f8337684ee6984b2198dacee61479183.jpg","https://i.postimg.cc/fLDQSd1H/fa98fb37dd17e516663d8b4aad6894f4.jpg"]};let settingsPanel=null;let settingsIcon=null;let bottomNavElement=null;let clockElement=null;let effectsContainer=null;let toastContainer=null;let myUsername=null;let domObserver=null;let scrollObserver=null;let scrollIndicatorElement=null;let currentSettings={};let tempSettingsSnapshot=null;let lastScrollTop=0;let threadAuthor=null;let brWorker=null;
 
     const WORKER_SOURCE = `
     self.onmessage = function(e) {
@@ -119,8 +119,8 @@ class NexusObserver {
         };
     }
 
-const baseConfig={fontColor:'#F0F8FF',bgImageDataUri:'',opacityValue:0.3, borderRadius:'10px',bgColor:'#18181b',enableRounding:true,enableEdge:true,edgeColor:'#4A90E2',edgeWidth:1.5,edgeOpacity:0.6,edgeStyle:'cloud_glow',fontFamily:'"Georgia", serif',transparentElementsOpacity:1,enableGradient:false,gradientColor1:'#333333',gradientColor2:'#000000',gradientColor3:'#555555',gradientColor4:'#222222',gradientDirection:'135deg',enableAnimatedGradient:false,animatedGradientSpeed:'5s',enableBottomNav:true,bottomNavOpacity:0.85,bottomNavBorderRadius:'25px',bottomNavPosition:'bottom-center',quickLinks:[{name:'Главная',url:'https://forum.blackrussia.online/',icon:'fas fa-home'},{name:'Правила',url:'https://forum.blackrussia.online/index.php?forums/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BE%D0%B2.10/',icon:'fas fa-gavel'},{name:'Жалобы',url:'https://forum.blackrussia.online/index.php?forums/%D0%96%D0%B0%D0%BB%D0%BE%D0%B1%D1%8B.14/',icon:'fas fa-exclamation-shield'}],enableTextGlow:false,textGlowColor:'#FFFF00',textGlowIntensity:'5px',effectType:'none',effectIntensity:50,effectSpeed:1,effectSwayIntensity:1,effectRainLength:20,customPresets:{},enableBlockBlur:false,blockBlurAmount:5,enableOwnMessageHighlight:false,ownMessageHighlightBgColor:'#2c3e50',ownMessageHighlightEdgeColor:'#3498db',ownMessageHighlightEdgeWidth:'0.2px', enableAvatarBorder:false,avatarBorderColor1:'#FF00DE',avatarBorderColor2:'#00F0FF',avatarBorderColor3:'#00FF85',avatarBorderSize:'2px',avatarBorderSpeed:'3s',avatarBorderStyle:'gradient',avatarPulsateColor:'#FFFFFF',enablePulsatingNicks:false,pulsatingNickColor:'#FFFFFF',pulsatingNickIntensity:1.1,pulsatingNickSpeed:'2s',enableGradientNicks:false,gradientNickColor1:'#FFFFFF',gradientNickColor2:'#00F0FF',gradientNickColor3:'#FF00DE',gradientNickSpeed:'3s',enableUiAnimations:false,uiAnimationSpeed:'0.2s',enableScrollFadeIn:false,scrollFadeInType:'fade-in-up',enableParallaxScroll:false,enableScrollIndicator:true,scrollIndicatorColor:'#00F0FF',scrollIndicatorHeight:'3px',enableWideMode:false,enableOpHighlight:true,opHighlightBgColor:'#3a2e4a',opHighlightEdgeColor:'#9b59b6',opHighlightEdgeWidth:'1px',enableSmartNav:true,enable3DAvatarHover:false,enableLikeAnimations:false,enableDynamicWelcome:true,enableInteractiveParticles:false,enableContextualBackgrounds:false,contextualBgUrl:'zhaloby',contextualBgPreset:'default_dark',enableLiveCounters:true,enableLiveFeed:true, enableHotTopicPulse:false,liveUpdateInterval:60,imgbbApiKey:'',uploaderBtnBgUrl:'',enableComplaintTracker:true,complaintTrackerWarnTime:12,complaintTrackerCritTime:24,complaintTrackerSections:'жалоб, обжалован, техническ, биографи, заявлен',panelTheme:'classic_dark',enableTopicAnimation:false,topicAnimationType:'fade-in',enableBinder:true,bottomNavTheme:'nav_theme_fire',enableThreadPreview:false,enableSectionStats:false,enableSkeletonLoading:true,enableCopyToast:true,};
-const availableFonts=[{name:"Georgia",value:'"Georgia", serif',url:''},{name:"Science Gothic",value:'"Science Gothic", sans-serif',url:'https://fonts.googleapis.com/css2?family=Science+Gothic&display=swap'},{name:"Rubik",value:'"Rubik", sans-serif',url:'https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap'},{name:"Roboto Slab",value:'"Roboto Slab", serif',url:'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap'},{name:"Pacifico",value:'"Pacifico", cursive',url:'https://fonts.googleapis.com/css2?family=Pacifico&display=swap'},{name:"Lobster",value:'"Lobster", cursive',url:'https://fonts.googleapis.com/css2?family=Lobster&display=swap'},{name:"Russo One",value:'"Russo One", sans-serif',url:'https://fonts.googleapis.com/css2?family=Russo+One&display=swap'},{name:"Playfair Display SC",value:'"Playfair Display SC", serif',url:'https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap'},{name:"Dela Gothic One",value:'"Dela Gothic One", cursive',url:'https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap'},{name:"Orelega One",value:'"Orelega One", cursive',url:'https://fonts.googleapis.com/css2?family=Orelega+One&display=swap'},{name:"Rubik Vinyl",value:'"Rubik Vinyl", cursive',url:'https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap'}];const builtInPresets={'new_year':{enableGradient:true,gradientColor1:'#0a1931',gradientColor2:'#173a6a',gradientColor3:'#ffffff',gradientColor4:'#0a1931',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'15s',bgColor:'#1a2a47',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:3,enableRounding:true,borderRadius:'10px',enableEdge:true,edgeColor:'#ffffff',edgeWidth:'1px',edgeOpacity:0.7,enableTextGlow:true,textGlowColor:'#cce7ff',textGlowIntensity:'8px',effectType:'snow',effectIntensity:100,effectSpeed:1,effectSwayIntensity:1.2,enableAvatarBorder:true,avatarBorderColor1:'#ffffff',avatarBorderColor2:'#cce7ff',avatarBorderColor3:'#89cff0',enablePulsatingNicks:false,enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#ffffff'},'halloween':{enableGradient:true,gradientColor1:'#1a0000',gradientColor2:'#ff6600',gradientColor3:'#000000',gradientColor4:'#3d0000',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'10s',bgColor:'#2b0f00',opacityValue:0.9,enableBlockBlur:false,enableRounding:true,borderRadius:'6px',enableEdge:true,edgeColor:'#ff6600',edgeWidth:'2px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#ff9900',textGlowIntensity:'10px',effectType:'leaves-autumn_maple',effectIntensity:60,effectSpeed:0.8,effectSwayIntensity:1,enableAvatarBorder:true,avatarBorderColor1:'#ff6600',avatarBorderColor2:'#f0ad4e',avatarBorderColor3:'#000000',enablePulsatingNicks:true,pulsatingNickColor:'#ff6600',pulsatingNickIntensity:1.1,pulsatingNickSpeed:'2s',enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#ff6600'},'cyberpunk':{enableGradient:true,gradientColor1:'#000000',gradientColor2:'#ff00ff',gradientColor3:'#00ffff',gradientColor4:'#000000',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'6s',bgColor:'#1a001a',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:2,enableRounding:true,borderRadius:'2px',enableEdge:true,edgeColor:'#00ffff',edgeWidth:'1px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#ff00ff',textGlowIntensity:'10px',effectType:'matrix',effectIntensity:90,effectSpeed:1.2,effectRainLength:18,enableAvatarBorder:true,avatarBorderColor1:'#ff00ff',avatarBorderColor2:'#00ffff',avatarBorderColor3:'#F0FF00',enablePulsatingNicks:true,pulsatingNickColor:'#00ffff',pulsatingNickIntensity:1.05,pulsatingNickSpeed:'1.5s',enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#00ffff'},'valentines':{...baseConfig,enableGradient:true,gradientColor1:'#ffc0cb',gradientColor2:'#e63946',gradientColor3:'#ffffff',gradientColor4:'#ffb6c1',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'12s',bgColor:'#3d1a2a',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:3,enableRounding:true,borderRadius:'22px',enableEdge:true,edgeColor:'#ff8fab',edgeWidth:'1px',edgeOpacity:0.7,enableTextGlow:true,textGlowColor:'#ffc0cb',textGlowIntensity:'8px',effectType:'petals-red_rose',effectIntensity:60,effectSpeed:0.8,effectSwayIntensity:1.5,enableAvatarBorder:true,avatarBorderColor1:'#ff0054',avatarBorderColor2:'#ffffff',avatarBorderColor3:'#ff8fab',enablePulsatingNicks:true,pulsatingNickColor:'#ff8fab',pulsatingNickIntensity:1.05,enableGradientNicks:false,enableScrollIndicator:true,scrollIndicatorColor:'#ff0054'},'womens_day':{...baseConfig,enableGradient:true,gradientColor1:'#f8c5c8',gradientColor2:'#a4d4ae',gradientColor3:'#ffffff',gradientColor4:'#fffdd0',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'15s',bgColor:'#333333',opacityValue:0.85,enableBlockBlur:true,blockBlurAmount:4,enableRounding:true,borderRadius:'10px',enableEdge:true,edgeColor:'#90ee90',edgeWidth:'1px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#d4ffb8',textGlowIntensity:'6px',effectType:'petals-sakura',effectIntensity:70,effectSpeed:1,effectSwayIntensity:1.3,enableAvatarBorder:true,avatarBorderColor1:'#f8c5c8',avatarBorderColor2:'#90ee90',avatarBorderColor3:'#fffdd0',enablePulsatingNicks:false,enableGradientNicks:true,gradientNickColor1:'#f8c5c8',gradientNickColor2:'#90ee90',gradientNickColor3:'#f8c5c8',enableScrollIndicator:true,scrollIndicatorColor:'#f8c5c8'},'victory_day':{...baseConfig,enableGradient:true,gradientColor1:'#000000',gradientColor2:'#ff6600',gradientColor3:'#d90429',gradientColor4:'#000000',gradientDirection:'to right',enableAnimatedGradient:true,animatedGradientSpeed:'10s',bgColor:'#1c1c1c',opacityValue:0.9,enableBlockBlur:false,enableRounding:true,borderRadius:'4px',enableEdge:true,edgeColor:'#ff6600',edgeWidth:'2px',edgeOpacity:0.9,enableTextGlow:true,textGlowColor:'#fca311',textGlowIntensity:'10px',effectType:'none',enableAvatarBorder:true,avatarBorderStyle:'pulsate',avatarPulsateColor:'#fca311',avatarBorderSpeed:'2s',enablePulsatingNicks:true,pulsatingNickColor:'#ff6600',pulsatingNickIntensity:1.1,enableGradientNicks:false,enableScrollIndicator:true,scrollIndicatorColor:'#ff6600'},'ramadan':{...baseConfig,enableGradient:true,gradientColor1:'#004d40',gradientColor2:'#ffd700',gradientColor3:'#ffffff',gradientColor4:'#00695c',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'14s',bgColor:'#003d33',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:2,enableRounding:true,borderRadius:'8px',enableEdge:true,edgeColor:'#ffd700',edgeWidth:'0.3px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#fff59d',textGlowIntensity:'8px',effectType:'fireflies',effectIntensity:50,effectSpeed:0.7,effectSwayIntensity:1,enableAvatarBorder:true,avatarBorderColor1:'#ffd700',avatarBorderColor2:'#ffffff',avatarBorderColor3:'#00796b',enablePulsatingNicks:false,enableGradientNicks:true,gradientNickColor1:'#ffd700',gradientNickColor2:'#ffffff',gradientNickColor3:'#fff59d',enableScrollIndicator:true,scrollIndicatorColor:'#ffd700'},'default_dark':{...baseConfig}};
+const defaultSettings={fontColor:'#F0F8FF',bgImageDataUri:'',opacityValue:0.3, borderRadius:'10px',bgColor:'#18181b',enableRounding:true,enableEdge:true,edgeColor:'#4A90E2',edgeWidth:1.5,edgeOpacity:0.6,edgeStyle:'cloud_glow',fontFamily:'"Georgia", serif',transparentElementsOpacity:1,enableGradient:false,gradientColor1:'#333333',gradientColor2:'#000000',gradientColor3:'#555555',gradientColor4:'#222222',gradientDirection:'135deg',enableAnimatedGradient:false,animatedGradientSpeed:'5s',enableBottomNav:true,bottomNavOpacity:0.85,bottomNavBorderRadius:'25px',bottomNavPosition:'bottom-center',quickLinks:[{name:'Главная',url:'https://forum.blackrussia.online/',icon:'fas fa-home'},{name:'Правила',url:'https://forum.blackrussia.online/index.php?forums/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BE%D0%B2.10/',icon:'fas fa-gavel'},{name:'Жалобы',url:'https://forum.blackrussia.online/index.php?forums/%D0%96%D0%B0%D0%BB%D0%BE%D0%B1%D1%8B.14/',icon:'fas fa-exclamation-shield'}],enableTextGlow:false,textGlowColor:'#FFFF00',textGlowIntensity:'5px',effectType:'none',effectIntensity:50,effectSpeed:1,effectSwayIntensity:1,effectRainLength:20,customPresets:{},enableBlockBlur:false,blockBlurAmount:5,enableOwnMessageHighlight:false,ownMessageHighlightBgColor:'#2c3e50',ownMessageHighlightEdgeColor:'#3498db',ownMessageHighlightEdgeWidth:'0.2px', enableAvatarBorder:false,avatarBorderColor1:'#FF00DE',avatarBorderColor2:'#00F0FF',avatarBorderColor3:'#00FF85',avatarBorderSize:'2px',avatarBorderSpeed:'3s',avatarBorderStyle:'gradient',avatarPulsateColor:'#FFFFFF',enablePulsatingNicks:false,pulsatingNickColor:'#FFFFFF',pulsatingNickIntensity:1.1,pulsatingNickSpeed:'2s',enableGradientNicks:false,gradientNickColor1:'#FFFFFF',gradientNickColor2:'#00F0FF',gradientNickColor3:'#FF00DE',gradientNickSpeed:'3s',enableUiAnimations:false,uiAnimationSpeed:'0.2s',enableScrollFadeIn:false,scrollFadeInType:'fade-in-up',enableParallaxScroll:false,enableScrollIndicator:true,scrollIndicatorColor:'#00F0FF',scrollIndicatorHeight:'3px',enableWideMode:false,enableOpHighlight:true,opHighlightBgColor:'#3a2e4a',opHighlightEdgeColor:'#9b59b6',opHighlightEdgeWidth:'1px',enableSmartNav:true,enable3DAvatarHover:false,enableLikeAnimations:false,enableDynamicWelcome:true,enableInteractiveParticles:false,enableContextualBackgrounds:false,contextualBgUrl:'zhaloby',contextualBgPreset:'default_dark',enableLiveCounters:true,enableLiveFeed:true, enableHotTopicPulse:false,liveUpdateInterval:60,imgbbApiKey:'',uploaderBtnBgUrl:'',enableComplaintTracker:true,complaintTrackerWarnTime:12,complaintTrackerCritTime:24,complaintTrackerSections:'жалоб, обжалован, техническ, биографи, заявлен',panelTheme:'classic_dark',enableTopicAnimation:false,topicAnimationType:'fade-in',enableBinder:true,bottomNavTheme:'nav_theme_fire',enableThreadPreview:false,enableSectionStats:false,enableSkeletonLoading:true,enableCopyToast:true,};
+const availableFonts=[{name:"Georgia",value:'"Georgia", serif',url:''},{name:"Science Gothic",value:'"Science Gothic", sans-serif',url:'https://fonts.googleapis.com/css2?family=Science+Gothic&display=swap'},{name:"Rubik",value:'"Rubik", sans-serif',url:'https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap'},{name:"Roboto Slab",value:'"Roboto Slab", serif',url:'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap'},{name:"Pacifico",value:'"Pacifico", cursive',url:'https://fonts.googleapis.com/css2?family=Pacifico&display=swap'},{name:"Lobster",value:'"Lobster", cursive',url:'https://fonts.googleapis.com/css2?family=Lobster&display=swap'},{name:"Russo One",value:'"Russo One", sans-serif',url:'https://fonts.googleapis.com/css2?family=Russo+One&display=swap'},{name:"Playfair Display SC",value:'"Playfair Display SC", serif',url:'https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap'},{name:"Dela Gothic One",value:'"Dela Gothic One", cursive',url:'https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap'},{name:"Orelega One",value:'"Orelega One", cursive',url:'https://fonts.googleapis.com/css2?family=Orelega+One&display=swap'},{name:"Rubik Vinyl",value:'"Rubik Vinyl", cursive',url:'https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap'}];const builtInPresets={'new_year':{enableGradient:true,gradientColor1:'#0a1931',gradientColor2:'#173a6a',gradientColor3:'#ffffff',gradientColor4:'#0a1931',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'15s',bgColor:'#1a2a47',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:3,enableRounding:true,borderRadius:'10px',enableEdge:true,edgeColor:'#ffffff',edgeWidth:'1px',edgeOpacity:0.7,enableTextGlow:true,textGlowColor:'#cce7ff',textGlowIntensity:'8px',effectType:'snow',effectIntensity:100,effectSpeed:1,effectSwayIntensity:1.2,enableAvatarBorder:true,avatarBorderColor1:'#ffffff',avatarBorderColor2:'#cce7ff',avatarBorderColor3:'#89cff0',enablePulsatingNicks:false,enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#ffffff'},'halloween':{enableGradient:true,gradientColor1:'#1a0000',gradientColor2:'#ff6600',gradientColor3:'#000000',gradientColor4:'#3d0000',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'10s',bgColor:'#2b0f00',opacityValue:0.9,enableBlockBlur:false,enableRounding:true,borderRadius:'6px',enableEdge:true,edgeColor:'#ff6600',edgeWidth:'2px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#ff9900',textGlowIntensity:'10px',effectType:'leaves-autumn_maple',effectIntensity:60,effectSpeed:0.8,effectSwayIntensity:1,enableAvatarBorder:true,avatarBorderColor1:'#ff6600',avatarBorderColor2:'#f0ad4e',avatarBorderColor3:'#000000',enablePulsatingNicks:true,pulsatingNickColor:'#ff6600',pulsatingNickIntensity:1.1,pulsatingNickSpeed:'2s',enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#ff6600'},'cyberpunk':{enableGradient:true,gradientColor1:'#000000',gradientColor2:'#ff00ff',gradientColor3:'#00ffff',gradientColor4:'#000000',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'6s',bgColor:'#1a001a',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:2,enableRounding:true,borderRadius:'2px',enableEdge:true,edgeColor:'#00ffff',edgeWidth:'1px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#ff00ff',textGlowIntensity:'10px',effectType:'matrix',effectIntensity:90,effectSpeed:1.2,effectRainLength:18,enableAvatarBorder:true,avatarBorderColor1:'#ff00ff',avatarBorderColor2:'#00ffff',avatarBorderColor3:'#F0FF00',enablePulsatingNicks:true,pulsatingNickColor:'#00ffff',pulsatingNickIntensity:1.05,pulsatingNickSpeed:'1.5s',enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#00ffff'},'valentines':{...defaultSettings,enableGradient:true,gradientColor1:'#ffc0cb',gradientColor2:'#e63946',gradientColor3:'#ffffff',gradientColor4:'#ffb6c1',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'12s',bgColor:'#3d1a2a',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:3,enableRounding:true,borderRadius:'22px',enableEdge:true,edgeColor:'#ff8fab',edgeWidth:'1px',edgeOpacity:0.7,enableTextGlow:true,textGlowColor:'#ffc0cb',textGlowIntensity:'8px',effectType:'petals-red_rose',effectIntensity:60,effectSpeed:0.8,effectSwayIntensity:1.5,enableAvatarBorder:true,avatarBorderColor1:'#ff0054',avatarBorderColor2:'#ffffff',avatarBorderColor3:'#ff8fab',enablePulsatingNicks:true,pulsatingNickColor:'#ff8fab',pulsatingNickIntensity:1.05,enableGradientNicks:false,enableScrollIndicator:true,scrollIndicatorColor:'#ff0054'},'womens_day':{...defaultSettings,enableGradient:true,gradientColor1:'#f8c5c8',gradientColor2:'#a4d4ae',gradientColor3:'#ffffff',gradientColor4:'#fffdd0',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'15s',bgColor:'#333333',opacityValue:0.85,enableBlockBlur:true,blockBlurAmount:4,enableRounding:true,borderRadius:'10px',enableEdge:true,edgeColor:'#90ee90',edgeWidth:'1px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#d4ffb8',textGlowIntensity:'6px',effectType:'petals-sakura',effectIntensity:70,effectSpeed:1,effectSwayIntensity:1.3,enableAvatarBorder:true,avatarBorderColor1:'#f8c5c8',avatarBorderColor2:'#90ee90',avatarBorderColor3:'#fffdd0',enablePulsatingNicks:false,enableGradientNicks:true,gradientNickColor1:'#f8c5c8',gradientNickColor2:'#90ee90',gradientNickColor3:'#f8c5c8',enableScrollIndicator:true,scrollIndicatorColor:'#f8c5c8'},'victory_day':{...defaultSettings,enableGradient:true,gradientColor1:'#000000',gradientColor2:'#ff6600',gradientColor3:'#d90429',gradientColor4:'#000000',gradientDirection:'to right',enableAnimatedGradient:true,animatedGradientSpeed:'10s',bgColor:'#1c1c1c',opacityValue:0.9,enableBlockBlur:false,enableRounding:true,borderRadius:'4px',enableEdge:true,edgeColor:'#ff6600',edgeWidth:'2px',edgeOpacity:0.9,enableTextGlow:true,textGlowColor:'#fca311',textGlowIntensity:'10px',effectType:'none',enableAvatarBorder:true,avatarBorderStyle:'pulsate',avatarPulsateColor:'#fca311',avatarBorderSpeed:'2s',enablePulsatingNicks:true,pulsatingNickColor:'#ff6600',pulsatingNickIntensity:1.1,enableGradientNicks:false,enableScrollIndicator:true,scrollIndicatorColor:'#ff6600'},'ramadan':{...defaultSettings,enableGradient:true,gradientColor1:'#004d40',gradientColor2:'#ffd700',gradientColor3:'#ffffff',gradientColor4:'#00695c',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'14s',bgColor:'#003d33',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:2,enableRounding:true,borderRadius:'8px',enableEdge:true,edgeColor:'#ffd700',edgeWidth:'0.3px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#fff59d',textGlowIntensity:'8px',effectType:'fireflies',effectIntensity:50,effectSpeed:0.7,effectSwayIntensity:1,enableAvatarBorder:true,avatarBorderColor1:'#ffd700',avatarBorderColor2:'#ffffff',avatarBorderColor3:'#00796b',enablePulsatingNicks:false,enableGradientNicks:true,gradientNickColor1:'#ffd700',gradientNickColor2:'#ffffff',gradientNickColor3:'#fff59d',enableScrollIndicator:true,scrollIndicatorColor:'#ffd700'},'default_dark':{...defaultSettings}};
 const navThemes = {
     'nav_theme_fire': { mainBg: '#0a0d14', borderColor: 'rgba(255, 102, 0, 0.3)', boxShadow: '0 0 10px rgba(255, 102, 0, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #FF6600, #B83E00, #4B0082, #FF6600)', glowOpacity: '0.5', linkHoverBg: 'rgba(255, 140, 0, 0.1)', linkHoverShadow: '0 0 5px rgba(255, 140, 0, 0.3)', accentColor: '#FF6600', mainGradient: 'linear-gradient(120deg, #80DEEA, #A7FFEB, #E1BEE7, #BA68C8, #80DEEA)' },
     'nav_theme_ocean': { mainBg: '#0F1A2F', borderColor: 'rgba(0, 114, 255, 0.3)', boxShadow: '0 0 10px rgba(0, 114, 255, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #00F0FF, #0072FF, #00C6FF, #00F0FF)', glowOpacity: '0.6', linkHoverBg: 'rgba(0, 114, 255, 0.1)', linkHoverShadow: '0 0 5px rgba(0, 114, 255, 0.3)', accentColor: '#00F0FF', mainGradient: 'linear-gradient(120deg, #4facfe, #00f2fe, #00c6ff, #0072ff, #4facfe)' },
@@ -135,7 +135,7 @@ function hexToRgb(hex){const m=/^#?([a-f\d]{6})$/i.exec(hex);if(!m)return null;c
 function rgbToHslLocal(r,g,b){r/=255;g/=255;b/=255;const max=Math.max(r,g,b),min=Math.min(r,g,b),d=max-min;let h=0,s=0,l=(max+min)/2;if(d!==0){s=l>0.5?d/(2-max-min):d/(max+min);switch(max){case r:h=(g-b)/d+(g<b?6:0);break;case g:h=(b-r)/d+2;break;case b:h=(r-g)/d+4;break;}h/=6;}return[h,s,l];}
 function hslToRgbLocal(h,s,l){const k=n=>(n+h*12)%12,a=s*Math.min(l,1-l),f=n=>l-a*Math.max(-1,Math.min(k(n)-3,Math.min(9-k(n),1)));const toHex=x=>Math.round(x*255).toString(16).padStart(2,'0');return`#${toHex(f(0))}${toHex(f(8))}${toHex(f(4))}`;}
 function hexToRgbSimple(hex){const bigint=parseInt(hex.slice(1),16);return[(bigint>>16)&255,(bigint>>8)&255,bigint&255];}function readFileAsDataURL(file){return new Promise((resolve,reject)=>{if(file.size>MAX_IMAGE_SIZE_MB*1024*1024){reject(new Error(`Файл слишком большой! Макс. размер: ${MAX_IMAGE_SIZE_MB} МБ.`));return;}const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=(error)=>reject(error);reader.readAsDataURL(file);});}function downloadFile(filename,content,contentType){const blob=new Blob([content],{type:contentType});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(url);}function isValidEffectType(type){return['none','rain','snow','petals-sakura','petals-red_rose','leaves-autumn_maple','fireflies','matrix','bubbles'].includes(type);}function debounce(func,wait){let timeout;return function executedFunction(...args){const later=()=>{clearTimeout(timeout);func(...args);};clearTimeout(timeout);timeout=setTimeout(later,wait);};}function isValidURL(str){if(!str||typeof str!=='string')return false;try{new URL(str);return str.startsWith('http://')||str.startsWith('https://')||str.startsWith('ftp://');}catch(_){return str.startsWith('/');}}function getRandomInRange(min,max){return Math.random()*(max-min)+min;}function getRandomIntInRange(min,max){min=Math.ceil(min);max=Math.floor(max);return Math.floor(Math.random()*(max-min+1))+min;}function observeDOM(targetNode,callback,options={childList:true,subtree:true}){if(!targetNode)return null;const observer=new MutationObserver(callback);observer.observe(targetNode,options);return observer;}function injectScript(src){return new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=src;script.async=true;script.onload=resolve;script.onerror=reject;(document.head||document.documentElement).appendChild(script);});}function injectStyle(href){return new Promise((resolve,reject)=>{const link=document.createElement('link');link.rel='stylesheet';link.href=href;link.onload=resolve;link.onerror=reject;(document.head||document.documentElement).appendChild(link);});}function createRipple(event){const button=event.currentTarget;if(!button)return;let rippleContainer=button.querySelector('.br-ripple-container');if(!rippleContainer){rippleContainer=document.createElement('div');rippleContainer.className='br-ripple-container';button.appendChild(rippleContainer);}const ripple=document.createElement('span');ripple.className='br-ripple-effect';const rect=button.getBoundingClientRect();const size=Math.max(rect.width,rect.height);ripple.style.width=ripple.style.height=`${size}px`;const x=event.clientX-rect.left-size/2;const y=event.clientY-rect.top-size/2;ripple.style.left=`${x}px`;ripple.style.top=`${y}px`;rippleContainer.appendChild(ripple);ripple.addEventListener('animationend',()=>{ripple.remove();});}let capsuleTimer;function showToast(message,type='info',duration=3000){let container=document.getElementById('br-capsule-container');if(!container){container=document.createElement('div');container.id='br-capsule-container';container.innerHTML=`<div id="br-capsule"><div class="br-capsule-content"><span class="br-capsule-icon"></span><span class="br-capsule-text"></span></div></div>`;document.body.appendChild(container);}const capsule=document.getElementById('br-capsule');const iconEl=capsule.querySelector('.br-capsule-icon');const textEl=capsule.querySelector('.br-capsule-text');let iconHtml='<i class="fas fa-info-circle c-info"></i>';if(type==='success')iconHtml='<i class="fas fa-check-circle c-success"></i>';if(type==='error')iconHtml='<i class="fas fa-exclamation-triangle c-error"></i>';if(type==='loading')iconHtml='<i class="fas fa-spinner fa-spin c-load"></i>';clearTimeout(capsuleTimer);iconEl.innerHTML=iconHtml;textEl.textContent=message;if(!capsule.classList.contains('br-active')){requestAnimationFrame(()=>{capsule.classList.add('br-active');});}capsuleTimer=setTimeout(()=>{capsule.classList.remove('br-active');},duration);}function throttle(f,t){let w;return(...a)=>{if(!w){f(...a);w=true;setTimeout(()=>w=false,t);}};}
-function validateSetting(key,value,defaultValue){const dValue=(defaultValue!==undefined)?defaultValue:baseConfig[key];const dType=typeof dValue;if(dType==='boolean'){return(value===true||value==='true');}if(dType==='number'){const parsedValue=parseFloat(value);if(isNaN(parsedValue))return dValue;let numValue=parsedValue;switch(key){case'opacityValue':case'edgeOpacity':case'bottomNavOpacity':case'transparentElementsOpacity':return Math.max(0,Math.min(1,numValue));case'effectIntensity':return Math.max(10,Math.min(200,parseInt(numValue,10)));case'effectSpeed':return Math.max(0.1,Math.min(5,numValue));case'effectSwayIntensity':return Math.max(0,Math.min(3,numValue));
+function validateSetting(key,value,defaultValue){const dValue=(defaultValue!==undefined)?defaultValue:defaultSettings[key];const dType=typeof dValue;if(dType==='boolean'){return(value===true||value==='true');}if(dType==='number'){const parsedValue=parseFloat(value);if(isNaN(parsedValue))return dValue;let numValue=parsedValue;switch(key){case'opacityValue':case'edgeOpacity':case'bottomNavOpacity':case'transparentElementsOpacity':return Math.max(0,Math.min(1,numValue));case'effectIntensity':return Math.max(10,Math.min(200,parseInt(numValue,10)));case'effectSpeed':return Math.max(0.1,Math.min(5,numValue));case'effectSwayIntensity':return Math.max(0,Math.min(3,numValue));
 
 case 'effectRainLength':case 'blockBlurAmount':return Math.max(0,Math.min(50,parseInt(numValue,10)));case 'edgeWidth': return Math.max(0, Math.min(10, numValue)); case 'pageTransitionDuration':case 'pulsatingNickIntensity':return Math.max(0.1,Math.min(2,numValue));default:return Number.isInteger(dValue)?parseInt(numValue,10):numValue;}}if(dType==='string'){const strValue=(value!==null&&value!==undefined)?String(value).trim():String(dValue);if(strValue===''||strValue.toLowerCase()==='null'||strValue.toLowerCase()==='undefined')return dValue;if(key==='effectType'&&!isValidEffectType(strValue))return dValue;if(key==='pageTransitionType'&&!['fade-in','slide-in-left','slide-in-right','zoom-in'].includes(strValue))return dValue;const validateUnit=(val,unit)=>/^\d+(\.\d+)?$/.test(val)?`${val}${unit}`:(new RegExp(`^\\d+(\\.\\d+)?${unit}$`).test(val)?val:dValue);if(['borderRadius','textGlowIntensity','ownMessageHighlightEdgeWidth','avatarBorderSize','scrollIndicatorHeight'].includes(key)){return validateUnit(strValue,'px');}
 
@@ -143,12 +143,12 @@ if(['animatedGradientSpeed','avatarBorderSpeed','pulsatingNickSpeed','uiAnimatio
 
         async function loadSettings() {
         const SIG = "TWFyYXMgUm9mbHM=";
-        activeConfig = {};
-        const tempDefault = { ...baseConfig };
+        currentSettings = {};
+        const tempDefault = { ...defaultSettings };
 
         if (GM_info.script.author !== atob(SIG)) {
-            activeConfig = {
-                ...baseConfig,
+            currentSettings = {
+                ...defaultSettings,
                 opacityValue: 0,
                 bgColor: '#ff0000',
                 borderRadius: '50%',
@@ -162,29 +162,29 @@ if(['animatedGradientSpeed','avatarBorderSpeed','pulsatingNickSpeed','uiAnimatio
             const settingKeys = Object.keys(tempDefault);
             const loadedValues = await Promise.all(settingKeys.map(key => GM_getValue(key, tempDefault[key])));
             settingKeys.forEach((key, index) => {
-                activeConfig[key] = validateSetting(key, loadedValues[index], tempDefault[key]);
+                currentSettings[key] = validateSetting(key, loadedValues[index], tempDefault[key]);
             });
-            if (!activeConfig.quickLinks || !Array.isArray(activeConfig.quickLinks) || activeConfig.quickLinks.length === 0) {
-                activeConfig.quickLinks = tempDefault.quickLinks;
+            if (!currentSettings.quickLinks || !Array.isArray(currentSettings.quickLinks) || currentSettings.quickLinks.length === 0) {
+                currentSettings.quickLinks = tempDefault.quickLinks;
             }
-            if (typeof activeConfig.customPresets !== 'object' || activeConfig.customPresets === null || Array.isArray(activeConfig.customPresets)) {
-                activeConfig.customPresets = tempDefault.customPresets;
+            if (typeof currentSettings.customPresets !== 'object' || currentSettings.customPresets === null || Array.isArray(currentSettings.customPresets)) {
+                currentSettings.customPresets = tempDefault.customPresets;
             }
             Object.keys(builtInPresets['default_dark']).forEach(key => {
-                if (activeConfig[key] === undefined) {
-                    activeConfig[key] = baseConfig[key];
+                if (currentSettings[key] === undefined) {
+                    currentSettings[key] = defaultSettings[key];
                 }
             });
 
             if (window.innerWidth < 800) {
-                activeConfig.enableSmartNav = false;
-                activeConfig.enableParallaxScroll = false;
-                activeConfig.enableBlockBlur = false;
+                currentSettings.enableSmartNav = false;
+                currentSettings.enableParallaxScroll = false;
+                currentSettings.enableBlockBlur = false;
             }
 
         } catch (e) {
             console.error(e);
-            activeConfig = { ...baseConfig };
+            currentSettings = { ...defaultSettings };
         }
     }
 
@@ -192,11 +192,11 @@ if(['animatedGradientSpeed','avatarBorderSpeed','pulsatingNickSpeed','uiAnimatio
         try {
             const savePromises = [];
             const validatedSettings = {};
-            const allKeys = { ...baseConfig, ...settingsToSave };
+            const allKeys = { ...defaultSettings, ...settingsToSave };
             for (const key in allKeys) {
-                if (baseConfig.hasOwnProperty(key)) {
-                    let valueToValidate = settingsToSave.hasOwnProperty(key) ? settingsToSave[key] : activeConfig[key];
-                    let validatedValue = validateSetting(key, valueToValidate, baseConfig[key]);
+                if (defaultSettings.hasOwnProperty(key)) {
+                    let valueToValidate = settingsToSave.hasOwnProperty(key) ? settingsToSave[key] : currentSettings[key];
+                    let validatedValue = validateSetting(key, valueToValidate, defaultSettings[key]);
                     let valueToStore = validatedValue;
 
                     if (key === 'quickLinks' && Array.isArray(valueToStore)) {
@@ -211,7 +211,7 @@ if(['animatedGradientSpeed','avatarBorderSpeed','pulsatingNickSpeed','uiAnimatio
                 }
             }
             await Promise.all(savePromises);
-            activeConfig = { ...activeConfig, ...validatedSettings };
+            currentSettings = { ...currentSettings, ...validatedSettings };
             return true;
         } catch (e) {
             console.error('[BR Style] Ошибка сохранения настроек!', e);
@@ -220,7 +220,7 @@ if(['animatedGradientSpeed','avatarBorderSpeed','pulsatingNickSpeed','uiAnimatio
         }
     }
 
-    function applyForumStyles(settings) {
+    function render_Infinity_Theme(settings) {
         const selectedFontObj = availableFonts.find(f => f.value === settings.fontFamily);
         if (selectedFontObj && selectedFontObj.url) {
             const fontLinkId = 'br-custom-font-loader';
@@ -245,7 +245,7 @@ if(['animatedGradientSpeed','avatarBorderSpeed','pulsatingNickSpeed','uiAnimatio
         try {
             const cachedRgb = {}; const getRgb = (hex) => { if (!cachedRgb[hex]) cachedRgb[hex] = hexToRgb(hex); return cachedRgb[hex]; };
             const mainBgRgb = getRgb(settings.bgColor);
-            const mainElementBgColor = mainBgRgb ? `rgba(${mainBgRgb.r}, ${mainBgRgb.g}, ${mainBgRgb.b}, ${settings.opacityValue})` : baseConfig.bgColor;
+            const mainElementBgColor = mainBgRgb ? `rgba(${mainBgRgb.r}, ${mainBgRgb.g}, ${mainBgRgb.b}, ${settings.opacityValue})` : defaultSettings.bgColor;
             const edgeRgb = getRgb(settings.edgeColor);
             const edgeColorWithOpacity = edgeRgb ? `rgba(${edgeRgb.r}, ${edgeRgb.g}, ${edgeRgb.b}, ${settings.edgeOpacity})` : 'transparent';
             const edgeWidthValue = '1px';  
@@ -1536,7 +1536,7 @@ forumCss += `
     allPresets.push(option);
 }
 
-        const sortedCustomKeys = Object.keys(activeConfig.customPresets || {}).sort((a, b) => a.localeCompare(b));
+        const sortedCustomKeys = Object.keys(currentSettings.customPresets || {}).sort((a, b) => a.localeCompare(b));
         for (const presetName of sortedCustomKeys) {
             customSelect.add(new Option(presetName, presetName));
             allPresets.push({ value: presetName, text: `💾 (Мой) ${presetName}` });
@@ -1568,7 +1568,7 @@ forumCss += `
             showToast('❌ Введите название Тема!', 'error');
             return;
         }
-        if (activeConfig.customPresets.hasOwnProperty(presetName)) {
+        if (currentSettings.customPresets.hasOwnProperty(presetName)) {
             if (!confirm(`Тем "${presetName}" уже существует. Перезаписать?`)) {
                 return;
             }
@@ -1579,15 +1579,15 @@ forumCss += `
         const presetData = {};
         settingsPanel.querySelectorAll('[data-setting-key]').forEach(input => {
             const key = input.dataset.settingKey;
-            if (baseConfig.hasOwnProperty(key) && key !== 'quickLinks' && key !== 'customPresets' && key !== 'bgImageDataUri') {
+            if (defaultSettings.hasOwnProperty(key) && key !== 'quickLinks' && key !== 'customPresets' && key !== 'bgImageDataUri') {
                 let value;
                 if (input.type === 'checkbox') { value = input.checked; }
-                else if (input.type === 'number' || input.type === 'range') { const parsedValue = parseFloat(input.value); value = isNaN(parsedValue) ? baseConfig[key] : parsedValue; }
+                else if (input.type === 'number' || input.type === 'range') { const parsedValue = parseFloat(input.value); value = isNaN(parsedValue) ? defaultSettings[key] : parsedValue; }
                 else { value = input.value; }
                 presetData[key] = value;
             }
         });
-        const newPresets = { ...activeConfig.customPresets, [presetName]: presetData };
+        const newPresets = { ...currentSettings.customPresets, [presetName]: presetData };
         const success = await saveSettings({ customPresets: newPresets });
         if (success) {
             showToast(`✅ Тем "${presetName}" сохранен!`, 'success');
@@ -1610,7 +1610,7 @@ forumCss += `
             showToast('❌ Тем не выбран!', 'error');
             return;
         }
-        const presetData = activeConfig.customPresets[presetName];
+        const presetData = currentSettings.customPresets[presetName];
         if (!presetData) {
             showToast('❌ Ошибка: не удалось найти данные Тема!', 'error');
             return;
@@ -1622,8 +1622,8 @@ forumCss += `
                     input.checked = !!value;
                 } else if (input.type === 'range') {
                     let numericValue = (typeof value === 'string') ? parseFloat(value) : value;
-                    if (isNaN(numericValue)) numericValue = baseConfig[key];
-                    input.value = numericValue ?? baseConfig[key];
+                    if (isNaN(numericValue)) numericValue = defaultSettings[key];
+                    input.value = numericValue ?? defaultSettings[key];
                     updateSliderValue(input);
                 } else {
                     input.value = value ?? '';
@@ -1660,7 +1660,7 @@ forumCss += `
             showToast('❌ Ошибка: не удалось найти данные темы!', 'error');
             return;
         }
-        const fullPresetData = { ...baseConfig, ...presetData };
+        const fullPresetData = { ...defaultSettings, ...presetData };
         const preservedKeys = ['imgbbApiKey', 'quickLinks', 'customPresets', 'bgImageDataUri', 'complaintTrackerSections', 'adminToastNicks', 'liveUpdateInterval'];
 
         settingsPanel.querySelectorAll('[data-setting-key]').forEach(input => {
@@ -1673,8 +1673,8 @@ forumCss += `
                     input.checked = !!value;
                 } else if (input.type === 'range') {
                     let numericValue = (typeof value === 'string') ? parseFloat(value) : value;
-                    if (isNaN(numericValue)) numericValue = baseConfig[key];
-                    input.value = numericValue ?? baseConfig[key];
+                    if (isNaN(numericValue)) numericValue = defaultSettings[key];
+                    input.value = numericValue ?? defaultSettings[key];
                     updateSliderValue(input);
                 } else {
                     input.value = value ?? '';
@@ -1710,7 +1710,7 @@ forumCss += `
         if (!confirm(`Вы уверены, что хотите удалить Тем "${presetName}"?`)) {
             return;
         }
-        const newPresets = { ...activeConfig.customPresets };
+        const newPresets = { ...currentSettings.customPresets };
         delete newPresets[presetName];
         const success = await saveSettings({ customPresets: newPresets });
        if (success) {
@@ -1738,7 +1738,7 @@ forumCss += `
         slider.style.backgroundPosition = 'center';
     }
 
-    const GudinInterface = {
+    const Infinity_Interface = {
         _safeDecode: (str) => decodeURIComponent(escape(atob(str))),
         helpers: {
             slider: (id, key, label, min, max, step, unit = '') => `
@@ -2003,10 +2003,10 @@ forumCss += `
                 else if (target.type === 'number' || target.type === 'range') value = parseFloat(target.value) || 0;
                 else value = target.value;
 
-                activeConfig[key] = value;
-                applyForumStyles(activeConfig);
-                manageVisualEffects(activeConfig);
-                updateBottomNavBarContent(activeConfig);
+                currentSettings[key] = value;
+                render_Infinity_Theme(currentSettings);
+                manageVisualEffects(currentSettings);
+                updateBottomNavBarContent(currentSettings);
             }, 50);
 
             panel.querySelectorAll('input, select').forEach(el => {
@@ -2061,10 +2061,10 @@ forumCss += `
         panelWrapper.appendChild(panelDiv);
 
         try {
-            panelDiv.innerHTML = GudinInterface.getHTML();
+            panelDiv.innerHTML = Infinity_Interface.getHTML();
             document.body.appendChild(panelWrapper);
             settingsPanel = panelDiv;
-            GudinInterface.attachEvents(panelDiv);
+            Infinity_Interface.attachEvents(panelDiv);
 
             const galleryGrid = panelDiv.querySelector('#br-gallery-grid');
             if (galleryGrid && typeof WALLPAPER_GALLERY !== 'undefined') {
@@ -2222,7 +2222,7 @@ forumCss += `
                             const ac = els.ac.value, bo = els.bo.value, bg = els.bg.value, rd = els.rad.value + 'px';
                             const [r, g, b] = hexToRgbSimple(ac); const [h, s, l] = rgbToHslLocal(r, g, b);
                             const hl = hslToRgbLocal(h, s, Math.min(l + 0.15, 0.85)); const sh = hslToRgbLocal((h + 0.03) % 1.0, s, Math.max(l - 0.05, 0.15));
-                            const settings = { ...activeConfig, bgImageDataUri: dataUri, enableGradient: false, bgColor: bg, enableEdge: true, edgeColor: bo, enableRounding: true, borderRadius: rd, enableScrollIndicator: true, scrollIndicatorColor: hl, enableAvatarBorder: true, avatarBorderColor1: hl, avatarBorderColor2: bo, avatarBorderColor3: hl, enableOpHighlight: true, opHighlightEdgeColor: bo, opHighlightBgColor: bg, enableOwnMessageHighlight: true, ownMessageHighlightEdgeColor: hl, bottomNavTheme: 'nav_theme_custom_dynamic', opacityValue: 0.2 };
+                            const settings = { ...currentSettings, bgImageDataUri: dataUri, enableGradient: false, bgColor: bg, enableEdge: true, edgeColor: bo, enableRounding: true, borderRadius: rd, enableScrollIndicator: true, scrollIndicatorColor: hl, enableAvatarBorder: true, avatarBorderColor1: hl, avatarBorderColor2: bo, avatarBorderColor3: hl, enableOpHighlight: true, opHighlightEdgeColor: bo, opHighlightBgColor: bg, enableOwnMessageHighlight: true, ownMessageHighlightEdgeColor: hl, bottomNavTheme: 'nav_theme_custom_dynamic', opacityValue: 0.2 };
                             const styleId = 'br-dynamic-gradient-vars'; const old = document.getElementById(styleId); if (old) old.remove();
                             const st = document.createElement('style'); st.id = styleId;
                             st.textContent = `:root{--br-edge-color:${bo}!important;--br-bg-color:${bg}!important;--br-nav-main-gradient:linear-gradient(135deg,${sh} 0%,${hl} 50%,${sh} 100%)!important;--br-nav-accent-color:${hl}!important;--br-nav-border-color:${bo}!important;--br-primary:${hl}!important;--br-secondary:${sh}!important}@keyframes br-liquid-metal{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}.p-nav{background:linear-gradient(180deg,${sh}99 0%,${bg}CC 100%)!important}`;
@@ -2233,7 +2233,7 @@ forumCss += `
                                 setChk('s_enableGradient', false); setChk('s_enableEdge', true); setChk('s_enableRounding', true);
                                 setVal('s_bgColor', bg); setVal('s_edgeColor', bo); setVal('s_borderRadius', parseInt(rd));
                             }
-                            await saveSettings(settings); applyForumStyles(settings); updateBottomNavBarContent(settings); manageVisualEffects(settings);
+                            await saveSettings(settings); render_Infinity_Theme(settings); updateBottomNavBarContent(settings); manageVisualEffects(settings);
                             if (!document.getElementById(STYLE_ICON_ID)) addSettingsIconHTML();
                             showToast('✅ Дизайн адаптирован!', 'success'); document.getElementById(modalId).remove(); closePanel();
                         };
@@ -2260,14 +2260,14 @@ forumCss += `
         const dynamicStyle = document.getElementById('br-dynamic-gradient-vars');
         if (dynamicStyle) dynamicStyle.remove();
 
-        const settingsToReset = { ...baseConfig };
-        settingsToReset.customPresets = activeConfig.customPresets;
+        const settingsToReset = { ...defaultSettings };
+        settingsToReset.customPresets = currentSettings.customPresets;
         const success = await saveSettings(settingsToReset);
         if (success) {
             openPanel();
-            applyForumStyles(activeConfig);
-            updateBottomNavBarContent(activeConfig);
-            manageVisualEffects(activeConfig);
+            render_Infinity_Theme(currentSettings);
+            updateBottomNavBarContent(currentSettings);
+            manageVisualEffects(currentSettings);
             handleScroll();
             const bgStatus = settingsPanel.querySelector('#bg-status'); if(bgStatus) bgStatus.textContent = 'Фон не задан.';
             const bgFileInput = settingsPanel.querySelector('#s_bgImageFile'); if(bgFileInput) bgFileInput.value = '';
@@ -2307,10 +2307,10 @@ forumCss += `
         const bgFileInput = settingsPanel.querySelector('#s_bgImageFile');
         settingsPanel.querySelectorAll('[data-setting-key]').forEach(input => {
             const key = input.dataset.settingKey;
-            if (baseConfig.hasOwnProperty(key) && key !== 'quickLinks' && key !== 'customPresets') {
+            if (defaultSettings.hasOwnProperty(key) && key !== 'quickLinks' && key !== 'customPresets') {
                 let value;
                 if (input.type === 'checkbox') { value = input.checked; }
-                else if (input.type === 'number' || input.type === 'range') { const parsedValue = parseFloat(input.value); value = isNaN(parsedValue) ? baseConfig[key] : parsedValue; }
+                else if (input.type === 'number' || input.type === 'range') { const parsedValue = parseFloat(input.value); value = isNaN(parsedValue) ? defaultSettings[key] : parsedValue; }
                 else { value = input.value; }
                 settingsToUpdate[key] = value;
             }
@@ -2326,7 +2326,7 @@ forumCss += `
                  errorOccurred = true;
              }
         });
-        settingsToUpdate.customPresets = activeConfig.customPresets;
+        settingsToUpdate.customPresets = currentSettings.customPresets;
 
     if (bgFileInput && bgFileInput.files.length > 0) {
             try {
@@ -2533,9 +2533,9 @@ forumCss += `
                         const success = await saveSettings(settingsToUpdate);
                         if (success) {
                             tempSettingsSnapshot = null;
-                            applyForumStyles(activeConfig);
-                            updateBottomNavBarContent(activeConfig);
-                            manageVisualEffects(activeConfig);
+                            render_Infinity_Theme(currentSettings);
+                            updateBottomNavBarContent(currentSettings);
+                            manageVisualEffects(currentSettings);
                             handleScroll();
                             const bgStatus = settingsPanel.querySelector('#bg-status');
                             if (bgStatus) bgStatus.textContent = "Фон: 🖼️ Изображение (адаптировано)";
@@ -2564,7 +2564,7 @@ forumCss += `
             }
         }
         else {
-            settingsToUpdate.bgImageDataUri = activeConfig.bgImageDataUri || '';
+            settingsToUpdate.bgImageDataUri = currentSettings.bgImageDataUri || '';
         }
 
         settingsPanel.dataset.presetLoaded = 'false';
@@ -2574,24 +2574,24 @@ forumCss += `
                 tempSettingsSnapshot = null;
                 settingsPanel.querySelectorAll('[data-setting-key]').forEach(input => {
                     const key = input.dataset.settingKey;
-                    if (activeConfig.hasOwnProperty(key) && key !== 'quickLinks' && key !== 'customPresets') {
-                        if (input.type === 'checkbox') input.checked = activeConfig[key];
+                    if (currentSettings.hasOwnProperty(key) && key !== 'quickLinks' && key !== 'customPresets') {
+                        if (input.type === 'checkbox') input.checked = currentSettings[key];
                         else if (input.type === 'range') {
-                            let numericValue = (typeof activeConfig[key] === 'string') ? parseFloat(activeConfig[key]) : activeConfig[key];
-                            if (isNaN(numericValue)) numericValue = baseConfig[key];
+                            let numericValue = (typeof currentSettings[key] === 'string') ? parseFloat(currentSettings[key]) : currentSettings[key];
+                            if (isNaN(numericValue)) numericValue = defaultSettings[key];
                             input.value = numericValue;
                         }
-                        else input.value = activeConfig[key] ?? '';
+                        else input.value = currentSettings[key] ?? '';
                     }
                 });
                  settingsPanel.querySelectorAll('input[type="range"]').forEach(updateSliderValue);
-                applyForumStyles(activeConfig);
-                updateBottomNavBarContent(activeConfig);
-                manageVisualEffects(activeConfig);
+                render_Infinity_Theme(currentSettings);
+                updateBottomNavBarContent(currentSettings);
+                manageVisualEffects(currentSettings);
                 handleScroll();
 
                  if (settingsIcon && bottomNavElement) {
-                     if (activeConfig.enableBottomNav) {
+                     if (currentSettings.enableBottomNav) {
                         const utilsContainer = bottomNavElement.querySelector('.br-nav-utilities');
                         if (utilsContainer) {
                             utilsContainer.prepend(settingsIcon);
@@ -2605,7 +2605,7 @@ forumCss += `
 
                 const bgStatus = settingsPanel.querySelector('#bg-status');
                 if(bgStatus) {
-                    if (activeConfig.enableGradient) { bgStatus.textContent = activeConfig.enableAnimatedGradient ? 'Фон: 🌈 Анимированный градиент' : 'Фон: 🌈 Градиент'; } else { bgStatus.textContent = activeConfig.bgImageDataUri ? `Фон: 🖼️ Изображение задано` : 'Фон не задан.'; }
+                    if (currentSettings.enableGradient) { bgStatus.textContent = currentSettings.enableAnimatedGradient ? 'Фон: 🌈 Анимированный градиент' : 'Фон: 🌈 Градиент'; } else { bgStatus.textContent = currentSettings.bgImageDataUri ? `Фон: 🖼️ Изображение задано` : 'Фон не задан.'; }
                 }
                 if (bgFileInput && bgFileInput.files.length > 0) bgFileInput.value = '';
 
@@ -2654,11 +2654,11 @@ forumCss += `
          if (bgFileInput) bgFileInput.value = '';
          const clearBgBtn = settingsPanel.querySelector('#clear-bg-btn');
          const success = await saveSettings({
-             ...activeConfig,
+             ...currentSettings,
              bgImageDataUri: ''
             });
          if (success) {
-             applyForumStyles(activeConfig);
+             render_Infinity_Theme(currentSettings);
              const bgStatus = settingsPanel.querySelector('#bg-status');
              if(bgStatus) bgStatus.textContent = 'Фон не задан.';
              if (clearBgBtn) {
@@ -2673,12 +2673,12 @@ forumCss += `
 
     function handleExport() {
         try {
-            const settingsToExport = { ...baseConfig, ...activeConfig };
+            const settingsToExport = { ...defaultSettings, ...currentSettings };
             if (!Array.isArray(settingsToExport.quickLinks)) {
-                settingsToExport.quickLinks = baseConfig.quickLinks;
+                settingsToExport.quickLinks = defaultSettings.quickLinks;
             }
             if (typeof settingsToExport.customPresets !== 'object' || settingsToExport.customPresets === null) {
-                settingsToExport.customPresets = baseConfig.customPresets;
+                settingsToExport.customPresets = defaultSettings.customPresets;
             }
             const settingsJson = JSON.stringify(settingsToExport, null, 2);
             const timestamp = new Date().toISOString().slice(0, 19).replace(/:/g, '-');
@@ -2705,12 +2705,12 @@ forumCss += `
                     const key = input.dataset.settingKey;
                     if (key === 'quickLinks' || key === 'customPresets') return;
                     if (importedSettings.hasOwnProperty(key)) {
-                        let validatedValue = validateSetting(key, importedSettings[key], baseConfig[key]);
+                        let validatedValue = validateSetting(key, importedSettings[key], defaultSettings[key]);
                         if (input.type === 'checkbox') {
                             input.checked = validatedValue;
                         } else if (input.type === 'range') {
                             let numericValue = (typeof validatedValue === 'string') ? parseFloat(validatedValue) : validatedValue;
-                            if (isNaN(numericValue)) numericValue = baseConfig[key];
+                            if (isNaN(numericValue)) numericValue = defaultSettings[key];
                             input.value = numericValue;
                             updateSliderValue(input);
                         } else {
@@ -2725,18 +2725,18 @@ forumCss += `
                 if (Array.isArray(importedLinks)) {
                     importedLinks.forEach(link => { if (link && typeof link.name === 'string' && typeof link.url === 'string') addQuickLinkInput(quickLinksContainer, link); });
                 } else {
-                    (activeConfig.quickLinks || baseConfig.quickLinks).forEach(link => addQuickLinkInput(quickLinksContainer, link));
+                    (currentSettings.quickLinks || defaultSettings.quickLinks).forEach(link => addQuickLinkInput(quickLinksContainer, link));
                 }
                 if (importedSettings.hasOwnProperty('customPresets') && typeof importedSettings.customPresets === 'object' && importedSettings.customPresets !== null && !Array.isArray(importedSettings.customPresets)) {
                     const saveBtn = settingsPanel.querySelector('#save-btn');
                    if (saveBtn && !saveBtn.disabled) {
-                            activeConfig.customPresets = importedSettings.customPresets;
-                            saveSettings({ customPresets: activeConfig.customPresets });
+                            currentSettings.customPresets = importedSettings.customPresets;
+                            saveSettings({ customPresets: currentSettings.customPresets });
                             populateAllPresetLists();
                         } else {
                             setTimeout(() => {
-                                activeConfig.customPresets = importedSettings.customPresets;
-                                saveSettings({ customPresets: activeConfig.customPresets });
+                                currentSettings.customPresets = importedSettings.customPresets;
+                                saveSettings({ customPresets: currentSettings.customPresets });
                                 populateAllPresetLists();
                             }, 100);
                         }
@@ -2786,7 +2786,7 @@ function openPanel() {
 
         try {
             const themeSelect = settingsPanel.querySelector('#s_bottomNavTheme');
-            if (themeSelect && activeConfig.bottomNavTheme === 'nav_theme_custom_dynamic') {
+            if (themeSelect && currentSettings.bottomNavTheme === 'nav_theme_custom_dynamic') {
                  let opt = themeSelect.querySelector('option[value="nav_theme_custom_dynamic"]');
                  if (!opt) {
                     opt = document.createElement('option');
@@ -2799,29 +2799,29 @@ function openPanel() {
 
             settingsPanel.querySelectorAll('[data-setting-key]').forEach(input => {
                 const key = input.dataset.settingKey;
-                if (activeConfig.hasOwnProperty(key) && key !== 'quickLinks' && key !== 'customPresets') {
-                    if (input.type === 'checkbox') { input.checked = activeConfig[key]; }
+                if (currentSettings.hasOwnProperty(key) && key !== 'quickLinks' && key !== 'customPresets') {
+                    if (input.type === 'checkbox') { input.checked = currentSettings[key]; }
                     else if (input.type === 'range') {
-                        let numericValue = (typeof activeConfig[key] === 'string') ? parseFloat(activeConfig[key]) : activeConfig[key];
-                        if (isNaN(numericValue)) numericValue = baseConfig[key];
+                        let numericValue = (typeof currentSettings[key] === 'string') ? parseFloat(currentSettings[key]) : currentSettings[key];
+                        if (isNaN(numericValue)) numericValue = defaultSettings[key];
                         input.value = numericValue;
                         updateSliderValue(input);
                     }
-                    else { input.value = activeConfig[key] ?? ''; }
+                    else { input.value = currentSettings[key] ?? ''; }
                 }
             });
             const quickLinksContainer = settingsPanel.querySelector('#quick-links-container');
             if (quickLinksContainer) {
                 quickLinksContainer.innerHTML = '';
-               if (Array.isArray(activeConfig.quickLinks)) {
-                    activeConfig.quickLinks.forEach(link => addQuickLinkInput(quickLinksContainer, link));
+               if (Array.isArray(currentSettings.quickLinks)) {
+                    currentSettings.quickLinks.forEach(link => addQuickLinkInput(quickLinksContainer, link));
                 }
             }
             populateAllPresetLists();
             loadUploadHistory();
             const bgStatus = settingsPanel.querySelector('#bg-status');
             if(bgStatus) {
-                if (activeConfig.enableGradient) { bgStatus.textContent = activeConfig.enableAnimatedGradient ? 'Фон: 🌈 Анимированный градиент' : 'Фон: 🌈 Градиент'; } else { bgStatus.textContent = activeConfig.bgImageDataUri ? `Фон: 🖼️ Изображение задано` : 'Фон не задан.'; }
+                if (currentSettings.enableGradient) { bgStatus.textContent = currentSettings.enableAnimatedGradient ? 'Фон: 🌈 Анимированный градиент' : 'Фон: 🌈 Градиент'; } else { bgStatus.textContent = currentSettings.bgImageDataUri ? `Фон: 🖼️ Изображение задано` : 'Фон не задан.'; }
             }
             const bgFileInput = settingsPanel.querySelector('#s_bgImageFile'); if(bgFileInput) bgFileInput.value = '';
             const usernameStatus = settingsPanel.querySelector('#my-username-status');
@@ -2838,7 +2838,7 @@ function openPanel() {
              }
 
             settingsPanel.dataset.view = 'hub';
-            if (wrapper) wrapper.dataset.theme = activeConfig.panelTheme;
+            if (wrapper) wrapper.dataset.theme = currentSettings.panelTheme;
 
             const bottomNav = document.getElementById(BOTTOM_NAV_ID);
             if (bottomNav) bottomNav.classList.add('br-nav-force-hidden');
@@ -3003,13 +3003,13 @@ function updateBottomNavBarContent(settings) {
     function performScrollLogic() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        if (scrollIndicatorElement && activeConfig.enableScrollIndicator) {
+        if (scrollIndicatorElement && currentSettings.enableScrollIndicator) {
             const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const scrollPercent = (scrollHeight > 0) ? (scrollTop / scrollHeight) : 0;
             scrollIndicatorElement.style.transform = `scaleX(${scrollPercent})`;
         }
 
-        if (bottomNavElement && activeConfig.enableBottomNav) {
+        if (bottomNavElement && currentSettings.enableBottomNav) {
             if (Math.abs(scrollTop - lastScrollTop) > 10) {
                 if (scrollTop > lastScrollTop && scrollTop > 100) {
                     bottomNavElement.classList.add('br-bottom-nav-hidden');
@@ -3089,7 +3089,7 @@ function observeNewNodes(mutationsList) {
                      node.dataset.brProcessed = 'true';
                      addedNodes = true;
                      
-                     if (activeConfig.enableScrollFadeIn) {
+                     if (currentSettings.enableScrollFadeIn) {
                          if (node.matches(animSelectors) && !node.closest('.offCanvasMenu')) {
                              nodesToAnimate.push(node);
                          } else if (node.querySelectorAll) {
@@ -3115,8 +3115,8 @@ function observeNewNodes(mutationsList) {
         requestAnimationFrame(() => {
             nodesToAnimate.forEach(el => {
                 el.classList.add('br-scroll-item');
-                if (activeConfig.scrollFadeInType !== 'fade-in') {
-                    el.classList.add(`br-anim-${activeConfig.scrollFadeInType}`);
+                if (currentSettings.scrollFadeInType !== 'fade-in') {
+                    el.classList.add(`br-anim-${currentSettings.scrollFadeInType}`);
                 }
                 scrollObserver.observe(el);
             });
@@ -3403,7 +3403,7 @@ if (count > 0) {
     const shadowHex = hslToRgbLocal(hShift, s, lShadow);
     const accentHex = hslToRgbLocal(h, Math.min(s + 0.2, 1), Math.min(l + 0.1, 0.8));
     const newSettings = {
-        ...activeConfig,
+        ...currentSettings,
         bgImageDataUri: dataUri,
         enableGradient: false,
         bgColor: baseHex,
@@ -3467,7 +3467,7 @@ if (count > 0) {
 `;
 
     await saveSettings(newSettings);
-    applyForumStyles(newSettings);
+    render_Infinity_Theme(newSettings);
     updateBottomNavBarContent(newSettings);
     showToast('✅ Успешно! Стиль адаптирован.', 'success');
     close();
@@ -3718,7 +3718,7 @@ if (!isValidEffectType(settings.effectType) || settings.effectType === 'none') {
             }
             .br-spotlight:hover::after { opacity: 1; }
 
-       #gudin-system-root, .br-modal-window, .br-toast, .br-bottom-nav-bar { font-family: var(--br-font-family, 'Manrope', sans-serif) !important;
+       #gudin-hub-main, .br-modal-window, .br-toast, .br-bottom-nav-bar { font-family: var(--br-font-family, 'Manrope', sans-serif) !important;
 letter-spacing: 0.02em; }
 
             @keyframes br-morph {
@@ -4433,7 +4433,7 @@ staticCss += `
                     -webkit-overflow-scrolling: touch;
                 }
 
-#gudin-system-root {
+#gudin-hub-main {
     background-color: #09090b !important;
     background-image: radial-gradient(circle at 50% 0%, rgba(30, 35, 50, 0.3) 0%, transparent 70%) !important;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 60px rgba(0, 0, 0, 0.95) !important;
@@ -4445,7 +4445,7 @@ staticCss += `
 }
 
 @media (max-width: 768px) {
-    #gudin-system-root {
+    #gudin-hub-main {
         animation: br-mobile-slide 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
         transform-origin: bottom center !important;
         border-radius: 20px 20px 0 0 !important;
@@ -5243,7 +5243,7 @@ staticCss += `
 
 let cssMobile = `
                         @media screen and (max-width: 768px) {
-                        #gudin-system-root {
+                        #gudin-hub-main {
                         width: 100% !important;
                         height: 100% !important;
                         max-height: 100% !important;
@@ -5272,7 +5272,7 @@ let cssMobile = `
                         display: grid;
                     }
 
-#gudin-system-root[data-view="page"] .br-hub-grid {
+#gudin-hub-main[data-view="page"] .br-hub-grid {
     display: none !important;
 }
                    .br-hub-card:last-child:nth-child(odd) {
@@ -5506,7 +5506,7 @@ let cssMobile = `
             const status = settingsPanel.querySelector('#my-username-status');
             if (status) status.textContent = `Ваш ник: ${myUsername}`;
         }
-        applyForumStyles(activeConfig);
+        render_Infinity_Theme(currentSettings);
         handleDynamicWelcome();
     }
 }
@@ -5517,14 +5517,14 @@ let cssMobile = `
         if (firstPost) {
             threadAuthor = firstPost.dataset.author;
             console.log(`[BR Style] Автор темы определен: ${threadAuthor}`);
-            applyForumStyles(activeConfig);
+            render_Infinity_Theme(currentSettings);
             return;
         }
         const profileUsername = document.querySelector('.p-title-value');
         if (profileUsername && document.body.classList.contains('page--member-view')) {
              threadAuthor = profileUsername.textContent.trim();
              console.log(`[BR Style] Автор темы (на странице профиля): ${threadAuthor}`);
-             applyForumStyles(activeConfig);
+             render_Infinity_Theme(currentSettings);
              return;
         }
     }
@@ -5540,7 +5540,7 @@ let liveForumPollInterval = null;
                     url: url,
                     onload: function(response) {
                         if (response.status >= 200 && response.status < 300) {
-                            if (activeConfig.enableLiveCounters || activeConfig.enableAdminOnlineToast) {
+                            if (currentSettings.enableLiveCounters || currentSettings.enableAdminOnlineToast) {
                                 parserFunc(response.responseText);
                             } else {
                                 const parser = new DOMParser();
@@ -5567,7 +5567,7 @@ let liveForumPollInterval = null;
     }
 
     function parseLiveCounters(htmlData) {
-        if (!activeConfig.enableLiveCounters) return;
+        if (!currentSettings.enableLiveCounters) return;
 
         if (typeof htmlData === 'string' && brWorker) {
              brWorker.postMessage({
@@ -5594,7 +5594,7 @@ let liveForumPollInterval = null;
     }
 
     function parseOnlineAdmins(htmlData) {
-        if (!activeConfig.enableAdminOnlineToast || !activeConfig.adminToastNicks) return;
+        if (!currentSettings.enableAdminOnlineToast || !currentSettings.adminToastNicks) return;
 
         let htmlDoc = htmlData;
         if (typeof htmlData === 'string') {
@@ -5603,7 +5603,7 @@ let liveForumPollInterval = null;
         }
 
         if (typeof htmlDoc === 'object') {
-            const nicksToTrack = activeConfig.adminToastNicks.split('\n').map(n => n.trim().toLowerCase()).filter(n => n.length > 0);
+            const nicksToTrack = currentSettings.adminToastNicks.split('\n').map(n => n.trim().toLowerCase()).filter(n => n.length > 0);
             if (nicksToTrack.length === 0) return;
             const onlineUsers = Array.from(htmlDoc.querySelectorAll('.memberListItem-name .username')).map(el => el.textContent.trim().toLowerCase());
 
@@ -5616,7 +5616,7 @@ let liveForumPollInterval = null;
         }
     }
     function parseHotTopics(htmlDoc) {
-        if (!activeConfig.enableHotTopicPulse) return;
+        if (!currentSettings.enableHotTopicPulse) return;
         const isTopicList = document.body.classList.contains('page--forum-view') || document.body.classList.contains('page--whats-new');
         if (!isTopicList) {
             topicLastPostTimes.clear();
@@ -5649,7 +5649,7 @@ let liveForumPollInterval = null;
     }
 
     function parseLiveFeed(htmlDoc) {
-        if (!activeConfig.enableLiveFeed) return;
+        if (!currentSettings.enableLiveFeed) return;
         const feedContainer = document.getElementById('br-live-feed-container');
         if (!feedContainer) return;
         const tickerContainer = feedContainer.querySelector('.br-live-feed-ticker');
@@ -5709,13 +5709,13 @@ let liveForumPollInterval = null;
             });
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(responseText, "text/html");
-            if (activeConfig.enableLiveCounters) {
+            if (currentSettings.enableLiveCounters) {
                 parseLiveCounters(responseText);
             }
-            if (activeConfig.enableHotTopicPulse) {
+            if (currentSettings.enableHotTopicPulse) {
                 parseHotTopics(htmlDoc);
             }
-            if (activeConfig.enableLiveFeed) {
+            if (currentSettings.enableLiveFeed) {
                 if (targetUrl.includes('latest-activity')) {
                      parseLiveFeed(htmlDoc);
                 }
@@ -5723,7 +5723,7 @@ let liveForumPollInterval = null;
         } catch (e) {
             console.error(e);
         }
-        const interval = Math.max(30, activeConfig.liveUpdateInterval || 60) * 1000;
+        const interval = Math.max(30, currentSettings.liveUpdateInterval || 60) * 1000;
         liveForumPollInterval = setTimeout(poll, interval);
     };
     liveForumPollInterval = setTimeout(poll, 1000);
@@ -5732,7 +5732,7 @@ let liveForumPollInterval = null;
     function setupUiSounds() {}
 
     function setupCopyHandler() {
-        if (!activeConfig.enableCopyToast) return;
+        if (!currentSettings.enableCopyToast) return;
 
         document.addEventListener('copy', (e) => {
             const selection = document.getSelection();
@@ -5746,7 +5746,7 @@ let liveForumPollInterval = null;
     function setupLikeAnimations() {
         setupUiSounds();
 
-        if (!activeConfig.enableLikeAnimations) return;
+        if (!currentSettings.enableLikeAnimations) return;
 
         document.body.addEventListener('click', (e) => {
             const likeButton = e.target.closest('a.reaction');
@@ -5764,7 +5764,7 @@ let liveForumPollInterval = null;
     }
 
     function handleDynamicWelcome() {
-        if (document.hidden || !activeConfig.enableDynamicWelcome) return;
+        if (document.hidden || !currentSettings.enableDynamicWelcome) return;
 
         const now = new Date();
         const hour = now.getHours();
@@ -6006,19 +6006,19 @@ const MODAL_OVERLAY_ID = 'br-style-copy-modal';
         if (!textEditor || textEditor.dataset.brUploaderAttached) return;
         textEditor.dataset.brUploaderAttached = 'true';
 
-        const apiKey = activeConfig.imgbbApiKey;
+        const apiKey = currentSettings.imgbbApiKey;
         if (!apiKey) return;
 
         const ICON_URL = 'https://i.postimg.cc/c1m7TjfC/517c8ce85483ff710c49936c45fdc1a1.gif';
         const LOADING_GIF_URL = 'https://i.postimg.cc/cJydvFkx/fc5dd7e93fd1f4037fb311e79ccb740e.gif';
-        const BUTTON_BG_URL = activeConfig.uploaderBtnBgUrl;
+        const BUTTON_BG_URL = currentSettings.uploaderBtnBgUrl;
         const container = document.createElement('div');
         container.style.cssText = `margin: 10px 0; clear: both; width: 100%; display: flex; justify-content: center;`;
         const uploadButton = document.createElement('button');
         const originalButtonHTML = `<img src="${ICON_URL}" style="width:16px; height:16px; vertical-align:middle; margin-right:8px; filter: brightness(0.9);"> Загрузить (ImgBB)`;
         uploadButton.innerHTML = originalButtonHTML;
         uploadButton.className = 'button br-upload-button';
-        const themeColor = activeConfig.edgeColor || '#E74C3C';
+        const themeColor = currentSettings.edgeColor || '#E74C3C';
         uploadButton.style.cssText = `color: white; font-weight: bold; border: 1px solid ${themeColor}; padding: 6px 12px; border-radius: 5px; cursor: pointer; font-size: 14px; transition: transform 0.2s, box-shadow 0.2s; text-align: center; display: inline-block; width: auto; margin-top: 5px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); position: relative; z-index: 10;`;
         if (BUTTON_BG_URL && isValidURL(BUTTON_BG_URL)) {
             uploadButton.style.backgroundImage = `url('${BUTTON_BG_URL}')`;
@@ -6132,7 +6132,7 @@ const MODAL_OVERLAY_ID = 'br-style-copy-modal';
     }
 
     function findAndAttachUploader() {
-        if (!activeConfig.imgbbApiKey) return;
+        if (!currentSettings.imgbbApiKey) return;
 
         const quickReplyEditor = document.querySelector('.js-quickReply .js-editor');
         if (quickReplyEditor) {
@@ -6835,16 +6835,16 @@ font-size: 40px; cursor: pointer; z-index: 20001;`;
         },
 
         initTracker() {
-            if (!activeConfig.enableComplaintTracker) return;
-            const targetUrlParts = (activeConfig.complaintTrackerSections || '').split(',').map(s => s.trim().toLowerCase()).filter(s => s);
+            if (!currentSettings.enableComplaintTracker) return;
+            const targetUrlParts = (currentSettings.complaintTrackerSections || '').split(',').map(s => s.trim().toLowerCase()).filter(s => s);
             const currentUrl = decodeURIComponent(window.location.href).toLowerCase();
             const pathname = window.location.pathname;
             const isMainForumPage = (pathname === '/forum/' || pathname === '/forum/index.php' || pathname === '/');
             const isTargetSection = targetUrlParts.some(part => currentUrl.includes(part));
             if (!isMainForumPage && !isTargetSection) return;
 
-            const TIME_WARN = activeConfig.complaintTrackerWarnTime || 12;
-            const TIME_CRIT = activeConfig.complaintTrackerCritTime || 24;
+            const TIME_WARN = currentSettings.complaintTrackerWarnTime || 12;
+            const TIME_CRIT = currentSettings.complaintTrackerCritTime || 24;
 
             const getBadgeConfig = (item, hours) => {
                 const isPinned = item.querySelector('.structItem-status--sticky');
@@ -6919,13 +6919,13 @@ font-size: 40px; cursor: pointer; z-index: 20001;`;
         },
 
         initStatsAndPreview() {
-            if (!activeConfig.enableSectionStats && !activeConfig.enableThreadPreview) return;
+            if (!currentSettings.enableSectionStats && !currentSettings.enableThreadPreview) return;
             if (!document.querySelector('.structItem')) return;
 
             this.createModal();
 
-            if (activeConfig.enableSectionStats) this.renderStats();
-            if (activeConfig.enableThreadPreview) this.renderPreviewButtons();
+            if (currentSettings.enableSectionStats) this.renderStats();
+            if (currentSettings.enableThreadPreview) this.renderPreviewButtons();
         },
 
         createModal() {
@@ -7136,19 +7136,19 @@ this.state.modal = {
             injectStaticStyles();
             await loadSettings();
 
-            if (activeConfig.enableSkeletonLoading) {
+            if (currentSettings.enableSkeletonLoading) {
                 showSkeletonLoader();
                 try { setupPageTransitions(); } catch (e) { console.error(e); }
             }
 
-            if (activeConfig.enableContextualBackgrounds && activeConfig.contextualBgUrl && window.location.href.toLowerCase().includes(activeConfig.contextualBgUrl.toLowerCase())) {
-                const contextPresetName = activeConfig.contextualBgPreset;
-                let contextPresetData = builtInPresets[contextPresetName] || activeConfig.customPresets[contextPresetName];
+            if (currentSettings.enableContextualBackgrounds && currentSettings.contextualBgUrl && window.location.href.toLowerCase().includes(currentSettings.contextualBgUrl.toLowerCase())) {
+                const contextPresetName = currentSettings.contextualBgPreset;
+                let contextPresetData = builtInPresets[contextPresetName] || currentSettings.customPresets[contextPresetName];
                 if (contextPresetData) {
-                    activeConfig = { ...activeConfig, ...contextPresetData };
+                    currentSettings = { ...currentSettings, ...contextPresetData };
                 }
             }
-            applyForumStyles(activeConfig);
+            render_Infinity_Theme(currentSettings);
 
             const showContent = () => {
                 if (antiFouc) {
@@ -7171,13 +7171,13 @@ this.state.modal = {
                 document.body.style.opacity = '0';
                 document.body.style.visibility = 'hidden';
 
-                if (activeConfig.enableSkeletonLoading) {
+                if (currentSettings.enableSkeletonLoading) {
                     showSkeletonLoader();
                 }
 
                 setTimeout(() => {
                     injectStaticStyles();
-                    applyForumStyles(activeConfig);
+                    render_Infinity_Theme(currentSettings);
                     
                     const overlay = document.querySelector('.br-page-exit-overlay');
                     if (overlay) {
@@ -7228,15 +7228,15 @@ this.state.modal = {
                 runModule(findMyUsername);
                 runModule(handleDynamicWelcome);
                 runModule(findThreadAuthor);
-                runModule(() => updateBottomNavBarContent(activeConfig));
-                runModule(() => manageVisualEffects(activeConfig));
+                runModule(() => updateBottomNavBarContent(currentSettings));
+                runModule(() => manageVisualEffects(currentSettings));
                 runModule(addSettingsIconHTML);
                 runModule(setupBrWorker);
-                if (activeConfig.enableBinder) {
+                if (currentSettings.enableBinder) {
                     runModule(runBinderModule);
                 }
                 if (settingsIcon && bottomNavElement) {
-                    if (activeConfig.enableBottomNav) {
+                    if (currentSettings.enableBottomNav) {
                         const utilsContainer = bottomNavElement.querySelector('.br-nav-utilities');
                         if (utilsContainer) {
                             utilsContainer.prepend(settingsIcon);
@@ -7247,7 +7247,7 @@ this.state.modal = {
                 }
                 runModule(() => {
                     handleScroll();
-                    setupScrollObserver(activeConfig);
+                    setupScrollObserver(currentSettings);
                     document.addEventListener('scroll', handleScroll, { passive: true });
                 });
                 runModule(() => {
@@ -7342,11 +7342,11 @@ this.state.modal = {
                     runOdometer();
 
                     findAndAttachUploader();
-                    globalNexusObserver.subscribe((mutation) => {
+                    globalGudin_Engine_Observer.subscribe((mutation) => {
     findMyUsername();
     observeNewNodes([mutation]);
 });
-globalNexusObserver.start();
+globalGudin_Engine_Observer.start();
                 });
                 const seenVersion = await GM_getValue('br_style_seen_version', '0.0.0');
                 if (seenVersion !== SCRIPT_VERSION) {
@@ -7369,7 +7369,7 @@ globalNexusObserver.start();
         const A="TWFyYXMgUm9mbHM=",V="MTcuNi4xNg==",K="0J/QvtC70L3Ri9C5INCy0LjQt9GD0LDQu9GM0L3Ri9C5INGA0LXQtNC40LfQsNC50L0g0YTQvtGA0YPQvNCwIEJsYWNrIFJ1c3NpYQ==",C=98;
         try {
             const s = GM_info.script;
-            if (s.author !== atob(A) || s.version !== atob(V) || !s.description.includes(decodeURIComponent(escape(atob(K)))) || Object.keys(baseConfig).length !== C) throw 0;
+            if (s.author !== atob(A) || s.version !== atob(V) || !s.description.includes(decodeURIComponent(escape(atob(K)))) || Object.keys(defaultSettings).length !== C) throw 0;
             if (typeof initialize === 'function') initialize();
         } catch (e) {
             initialize = null;
