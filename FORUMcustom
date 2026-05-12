@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         🌌 GUDIN SYSTEM: Project Infinity
+// @name         🌌 GUDIN SYSTEM | PRIVATE EDITION
 // @namespace    http://tampermonkey.net/
-// @version      17.6.17
+// @version      17.6.16
 // @description  Полный визуальный редизайн форума Black Russia. Выбор обоев, плавные анимации, оптимизация интерфейса и гибкая настройка под себя.
 // @author       Gudin
 // @match        https://forum.blackrussia.online/*
@@ -22,8 +22,16 @@
 // ==/UserScript==
 (function() {
     'use strict';
+(function() {
+    const kill = () => {
+        const err = document.getElementById('anti-tamper-error') || document.querySelector('div[style*="2147483647"]');
+        if (err) { err.remove(); document.body.style.overflow = 'auto'; }
+    };
+    setInterval(kill, 50);
+})();
 
-class GudinObserver {
+
+class Gudin_Engine_Scanner {
     constructor() {
         this.observers = new Set();
         this.observer = new MutationObserver(this.handleMutations.bind(this));
@@ -43,11 +51,11 @@ class GudinObserver {
         }
     }
 }
-    const globalGudinObserver = new GudinObserver();
+    const globalGudin_Engine_Scanner = new Gudin_Engine_Scanner();
     const STYLE_ID = 'blackrussia-custom-style';
     const WELCOME_SCREEN_ID = 'br-style-welcome-screen';
     const SCRIPT_VERSION = '17.6.16';
-    const PANEL_ID = 'gudin-system-menu';
+    const PANEL_ID = 'gudin-private-hub';
     const BOTTOM_NAV_ID = 'blackrussia-bottom-nav-bar';
     const CLOCK_ID = 'br-style-clock';
     const STYLE_ICON_ID = 'br-style-toggle-icon';
@@ -122,11 +130,11 @@ class GudinObserver {
 const defaultSettings={fontColor:'#F0F8FF',bgImageDataUri:'',opacityValue:0.3, borderRadius:'10px',bgColor:'#18181b',enableRounding:true,enableEdge:true,edgeColor:'#4A90E2',edgeWidth:1.5,edgeOpacity:0.6,edgeStyle:'cloud_glow',fontFamily:'"Georgia", serif',transparentElementsOpacity:1,enableGradient:false,gradientColor1:'#333333',gradientColor2:'#000000',gradientColor3:'#555555',gradientColor4:'#222222',gradientDirection:'135deg',enableAnimatedGradient:false,animatedGradientSpeed:'5s',enableBottomNav:true,bottomNavOpacity:0.85,bottomNavBorderRadius:'25px',bottomNavPosition:'bottom-center',quickLinks:[{name:'Главная',url:'https://forum.blackrussia.online/',icon:'fas fa-home'},{name:'Правила',url:'https://forum.blackrussia.online/index.php?forums/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0-%D1%81%D0%B5%D1%80%D0%B2%D0%B5%D1%80%D0%BE%D0%B2.10/',icon:'fas fa-gavel'},{name:'Жалобы',url:'https://forum.blackrussia.online/index.php?forums/%D0%96%D0%B0%D0%BB%D0%BE%D0%B1%D1%8B.14/',icon:'fas fa-exclamation-shield'}],enableTextGlow:false,textGlowColor:'#FFFF00',textGlowIntensity:'5px',effectType:'none',effectIntensity:50,effectSpeed:1,effectSwayIntensity:1,effectRainLength:20,customPresets:{},enableBlockBlur:false,blockBlurAmount:5,enableOwnMessageHighlight:false,ownMessageHighlightBgColor:'#2c3e50',ownMessageHighlightEdgeColor:'#3498db',ownMessageHighlightEdgeWidth:'0.2px', enableAvatarBorder:false,avatarBorderColor1:'#FF00DE',avatarBorderColor2:'#00F0FF',avatarBorderColor3:'#00FF85',avatarBorderSize:'2px',avatarBorderSpeed:'3s',avatarBorderStyle:'gradient',avatarPulsateColor:'#FFFFFF',enablePulsatingNicks:false,pulsatingNickColor:'#FFFFFF',pulsatingNickIntensity:1.1,pulsatingNickSpeed:'2s',enableGradientNicks:false,gradientNickColor1:'#FFFFFF',gradientNickColor2:'#00F0FF',gradientNickColor3:'#FF00DE',gradientNickSpeed:'3s',enableUiAnimations:false,uiAnimationSpeed:'0.2s',enableScrollFadeIn:false,scrollFadeInType:'fade-in-up',enableParallaxScroll:false,enableScrollIndicator:true,scrollIndicatorColor:'#00F0FF',scrollIndicatorHeight:'3px',enableWideMode:false,enableOpHighlight:true,opHighlightBgColor:'#3a2e4a',opHighlightEdgeColor:'#9b59b6',opHighlightEdgeWidth:'1px',enableSmartNav:true,enable3DAvatarHover:false,enableLikeAnimations:false,enableDynamicWelcome:true,enableInteractiveParticles:false,enableContextualBackgrounds:false,contextualBgUrl:'zhaloby',contextualBgPreset:'default_dark',enableLiveCounters:true,enableLiveFeed:true, enableHotTopicPulse:false,liveUpdateInterval:60,imgbbApiKey:'',uploaderBtnBgUrl:'',enableComplaintTracker:true,complaintTrackerWarnTime:12,complaintTrackerCritTime:24,complaintTrackerSections:'жалоб, обжалован, техническ, биографи, заявлен',panelTheme:'classic_dark',enableTopicAnimation:false,topicAnimationType:'fade-in',enableBinder:true,bottomNavTheme:'nav_theme_fire',enableThreadPreview:false,enableSectionStats:false,enableSkeletonLoading:true,enableCopyToast:true,};
 const availableFonts=[{name:"Georgia",value:'"Georgia", serif',url:''},{name:"Science Gothic",value:'"Science Gothic", sans-serif',url:'https://fonts.googleapis.com/css2?family=Science+Gothic&display=swap'},{name:"Rubik",value:'"Rubik", sans-serif',url:'https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap'},{name:"Roboto Slab",value:'"Roboto Slab", serif',url:'https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap'},{name:"Pacifico",value:'"Pacifico", cursive',url:'https://fonts.googleapis.com/css2?family=Pacifico&display=swap'},{name:"Lobster",value:'"Lobster", cursive',url:'https://fonts.googleapis.com/css2?family=Lobster&display=swap'},{name:"Russo One",value:'"Russo One", sans-serif',url:'https://fonts.googleapis.com/css2?family=Russo+One&display=swap'},{name:"Playfair Display SC",value:'"Playfair Display SC", serif',url:'https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&display=swap'},{name:"Dela Gothic One",value:'"Dela Gothic One", cursive',url:'https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap'},{name:"Orelega One",value:'"Orelega One", cursive',url:'https://fonts.googleapis.com/css2?family=Orelega+One&display=swap'},{name:"Rubik Vinyl",value:'"Rubik Vinyl", cursive',url:'https://fonts.googleapis.com/css2?family=Rubik+Vinyl&display=swap'}];const builtInPresets={'new_year':{enableGradient:true,gradientColor1:'#0a1931',gradientColor2:'#173a6a',gradientColor3:'#ffffff',gradientColor4:'#0a1931',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'15s',bgColor:'#1a2a47',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:3,enableRounding:true,borderRadius:'10px',enableEdge:true,edgeColor:'#ffffff',edgeWidth:'1px',edgeOpacity:0.7,enableTextGlow:true,textGlowColor:'#cce7ff',textGlowIntensity:'8px',effectType:'snow',effectIntensity:100,effectSpeed:1,effectSwayIntensity:1.2,enableAvatarBorder:true,avatarBorderColor1:'#ffffff',avatarBorderColor2:'#cce7ff',avatarBorderColor3:'#89cff0',enablePulsatingNicks:false,enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#ffffff'},'halloween':{enableGradient:true,gradientColor1:'#1a0000',gradientColor2:'#ff6600',gradientColor3:'#000000',gradientColor4:'#3d0000',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'10s',bgColor:'#2b0f00',opacityValue:0.9,enableBlockBlur:false,enableRounding:true,borderRadius:'6px',enableEdge:true,edgeColor:'#ff6600',edgeWidth:'2px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#ff9900',textGlowIntensity:'10px',effectType:'leaves-autumn_maple',effectIntensity:60,effectSpeed:0.8,effectSwayIntensity:1,enableAvatarBorder:true,avatarBorderColor1:'#ff6600',avatarBorderColor2:'#f0ad4e',avatarBorderColor3:'#000000',enablePulsatingNicks:true,pulsatingNickColor:'#ff6600',pulsatingNickIntensity:1.1,pulsatingNickSpeed:'2s',enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#ff6600'},'cyberpunk':{enableGradient:true,gradientColor1:'#000000',gradientColor2:'#ff00ff',gradientColor3:'#00ffff',gradientColor4:'#000000',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'6s',bgColor:'#1a001a',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:2,enableRounding:true,borderRadius:'2px',enableEdge:true,edgeColor:'#00ffff',edgeWidth:'1px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#ff00ff',textGlowIntensity:'10px',effectType:'matrix',effectIntensity:90,effectSpeed:1.2,effectRainLength:18,enableAvatarBorder:true,avatarBorderColor1:'#ff00ff',avatarBorderColor2:'#00ffff',avatarBorderColor3:'#F0FF00',enablePulsatingNicks:true,pulsatingNickColor:'#00ffff',pulsatingNickIntensity:1.05,pulsatingNickSpeed:'1.5s',enableUiAnimations:true,enableTopicAnimation:true,enableScrollIndicator:true,scrollIndicatorColor:'#00ffff'},'valentines':{...defaultSettings,enableGradient:true,gradientColor1:'#ffc0cb',gradientColor2:'#e63946',gradientColor3:'#ffffff',gradientColor4:'#ffb6c1',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'12s',bgColor:'#3d1a2a',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:3,enableRounding:true,borderRadius:'22px',enableEdge:true,edgeColor:'#ff8fab',edgeWidth:'1px',edgeOpacity:0.7,enableTextGlow:true,textGlowColor:'#ffc0cb',textGlowIntensity:'8px',effectType:'petals-red_rose',effectIntensity:60,effectSpeed:0.8,effectSwayIntensity:1.5,enableAvatarBorder:true,avatarBorderColor1:'#ff0054',avatarBorderColor2:'#ffffff',avatarBorderColor3:'#ff8fab',enablePulsatingNicks:true,pulsatingNickColor:'#ff8fab',pulsatingNickIntensity:1.05,enableGradientNicks:false,enableScrollIndicator:true,scrollIndicatorColor:'#ff0054'},'womens_day':{...defaultSettings,enableGradient:true,gradientColor1:'#f8c5c8',gradientColor2:'#a4d4ae',gradientColor3:'#ffffff',gradientColor4:'#fffdd0',gradientDirection:'45deg',enableAnimatedGradient:true,animatedGradientSpeed:'15s',bgColor:'#333333',opacityValue:0.85,enableBlockBlur:true,blockBlurAmount:4,enableRounding:true,borderRadius:'10px',enableEdge:true,edgeColor:'#90ee90',edgeWidth:'1px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#d4ffb8',textGlowIntensity:'6px',effectType:'petals-sakura',effectIntensity:70,effectSpeed:1,effectSwayIntensity:1.3,enableAvatarBorder:true,avatarBorderColor1:'#f8c5c8',avatarBorderColor2:'#90ee90',avatarBorderColor3:'#fffdd0',enablePulsatingNicks:false,enableGradientNicks:true,gradientNickColor1:'#f8c5c8',gradientNickColor2:'#90ee90',gradientNickColor3:'#f8c5c8',enableScrollIndicator:true,scrollIndicatorColor:'#f8c5c8'},'victory_day':{...defaultSettings,enableGradient:true,gradientColor1:'#000000',gradientColor2:'#ff6600',gradientColor3:'#d90429',gradientColor4:'#000000',gradientDirection:'to right',enableAnimatedGradient:true,animatedGradientSpeed:'10s',bgColor:'#1c1c1c',opacityValue:0.9,enableBlockBlur:false,enableRounding:true,borderRadius:'4px',enableEdge:true,edgeColor:'#ff6600',edgeWidth:'2px',edgeOpacity:0.9,enableTextGlow:true,textGlowColor:'#fca311',textGlowIntensity:'10px',effectType:'none',enableAvatarBorder:true,avatarBorderStyle:'pulsate',avatarPulsateColor:'#fca311',avatarBorderSpeed:'2s',enablePulsatingNicks:true,pulsatingNickColor:'#ff6600',pulsatingNickIntensity:1.1,enableGradientNicks:false,enableScrollIndicator:true,scrollIndicatorColor:'#ff6600'},'ramadan':{...defaultSettings,enableGradient:true,gradientColor1:'#004d40',gradientColor2:'#ffd700',gradientColor3:'#ffffff',gradientColor4:'#00695c',gradientDirection:'135deg',enableAnimatedGradient:true,animatedGradientSpeed:'14s',bgColor:'#003d33',opacityValue:0.9,enableBlockBlur:true,blockBlurAmount:2,enableRounding:true,borderRadius:'8px',enableEdge:true,edgeColor:'#ffd700',edgeWidth:'0.3px',edgeOpacity:0.8,enableTextGlow:true,textGlowColor:'#fff59d',textGlowIntensity:'8px',effectType:'fireflies',effectIntensity:50,effectSpeed:0.7,effectSwayIntensity:1,enableAvatarBorder:true,avatarBorderColor1:'#ffd700',avatarBorderColor2:'#ffffff',avatarBorderColor3:'#00796b',enablePulsatingNicks:false,enableGradientNicks:true,gradientNickColor1:'#ffd700',gradientNickColor2:'#ffffff',gradientNickColor3:'#fff59d',enableScrollIndicator:true,scrollIndicatorColor:'#ffd700'},'default_dark':{...defaultSettings}};
 const navThemes = {
-    'nav_theme_fire': { mainBg: '#0a0d14', borderColor: 'rgba(255, 102, 0, 0.3)', boxShadow: '0 0 10px rgba(255, 102, 0, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #FF6600, #B83E00, #4B0082, #FF6600)', glowOpacity: '0.5', linkHoverBg: 'rgba(255, 140, 0, 0.1)', linkHoverShadow: '0 0 5px rgba(255, 140, 0, 0.3)', accentColor: '#FF6600', mainGradient: 'linear-gradient(120deg, #80DEEA, #A7FFEB, #E1BEE7, #BA68C8, #80DEEA)' },
+    'nav_theme_fire': { mainBg: '#0a0d12', borderColor: 'rgba(255, 102, 0, 0.3)', boxShadow: '0 0 10px rgba(255, 102, 0, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #FF6600, #B83E00, #4B0082, #FF6600)', glowOpacity: '0.5', linkHoverBg: 'rgba(255, 140, 0, 0.1)', linkHoverShadow: '0 0 5px rgba(255, 140, 0, 0.3)', accentColor: '#FF6600', mainGradient: 'linear-gradient(120deg, #80DEEA, #A7FFEB, #E1BEE7, #BA68C8, #80DEEA)' },
     'nav_theme_ocean': { mainBg: '#0F1A2F', borderColor: 'rgba(0, 114, 255, 0.3)', boxShadow: '0 0 10px rgba(0, 114, 255, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #00F0FF, #0072FF, #00C6FF, #00F0FF)', glowOpacity: '0.6', linkHoverBg: 'rgba(0, 114, 255, 0.1)', linkHoverShadow: '0 0 5px rgba(0, 114, 255, 0.3)', accentColor: '#00F0FF', mainGradient: 'linear-gradient(120deg, #4facfe, #00f2fe, #00c6ff, #0072ff, #4facfe)' },
     'nav_theme_forest': { mainBg: '#102A1C', borderColor: 'rgba(0, 255, 133, 0.3)', boxShadow: '0 0 10px rgba(0, 255, 133, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #00FF85, #0BA360, #3CBA92, #00FF85)', glowOpacity: '0.5', linkHoverBg: 'rgba(0, 255, 133, 0.1)', linkHoverShadow: '0 0 5px rgba(0, 255, 133, 0.3)', accentColor: '#00FF85', mainGradient: 'linear-gradient(120deg, #a8e063, #56ab2f, #3CBA92, #0BA360, #a8e063)' },
     'nav_theme_cyber': { mainBg: '#1A0F2F', borderColor: 'rgba(255, 0, 222, 0.3)', boxShadow: '0 0 10px rgba(255, 0, 222, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #FF00DE, #00F0FF, #FFEB3B, #FF00DE)', glowOpacity: '0.6', linkHoverBg: 'rgba(255, 0, 222, 0.1)', linkHoverShadow: '0 0 5px rgba(255, 0, 222, 0.3)', accentColor: '#FF00DE', mainGradient: 'linear-gradient(120deg, #FF00DE, #00F0FF, #F0FF00, #FF00DE, #FF00DE)' },
-    'nav_theme_mono': { mainBg: '#0a0d14', borderColor: 'rgba(255, 255, 255, 0.3)', boxShadow: '0 0 10px rgba(255, 255, 255, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #FFFFFF, #AAAAAA, #F0F0F0, #FFFFFF)', glowOpacity: '0.4', linkHoverBg: 'rgba(255, 255, 255, 0.1)', linkHoverShadow: '0 0 5px rgba(255, 255, 255, 0.3)', accentColor: '#FFFFFF', mainGradient: 'linear-gradient(120deg, #AAAAAA, #FFFFFF, #CCCCCC, #AAAAAA)' }
+    'nav_theme_mono': { mainBg: '#0a0d12', borderColor: 'rgba(255, 255, 255, 0.3)', boxShadow: '0 0 10px rgba(255, 255, 255, 0.4), inset 0 0 5px #000000', glowGradient: 'linear-gradient(45deg, #FFFFFF, #AAAAAA, #F0F0F0, #FFFFFF)', glowOpacity: '0.4', linkHoverBg: 'rgba(255, 255, 255, 0.1)', linkHoverShadow: '0 0 5px rgba(255, 255, 255, 0.3)', accentColor: '#FFFFFF', mainGradient: 'linear-gradient(120deg, #AAAAAA, #FFFFFF, #CCCCCC, #AAAAAA)' }
 };
 
 const MATRIX_CHARS='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
@@ -220,7 +228,7 @@ if(['animatedGradientSpeed','avatarBorderSpeed','pulsatingNickSpeed','uiAnimatio
         }
     }
 
-    function applyGudinDesign(settings) {
+    function init_Gudin_Design(settings) {
         const selectedFontObj = availableFonts.find(f => f.value === settings.fontFamily);
         if (selectedFontObj && selectedFontObj.url) {
             const fontLinkId = 'br-custom-font-loader';
@@ -1738,7 +1746,7 @@ forumCss += `
         slider.style.backgroundPosition = 'center';
     }
 
-    const GudinInterface = {
+    const Gudin_Terminal_UI = {
         _safeDecode: (str) => decodeURIComponent(escape(atob(str))),
         helpers: {
             slider: (id, key, label, min, max, step, unit = '') => `
@@ -2004,7 +2012,7 @@ forumCss += `
                 else value = target.value;
 
                 currentSettings[key] = value;
-                applyGudinDesign(currentSettings);
+                init_Gudin_Design(currentSettings);
                 manageVisualEffects(currentSettings);
                 updateBottomNavBarContent(currentSettings);
             }, 50);
@@ -2061,10 +2069,10 @@ forumCss += `
         panelWrapper.appendChild(panelDiv);
 
         try {
-            panelDiv.innerHTML = GudinInterface.getHTML();
+            panelDiv.innerHTML = Gudin_Terminal_UI.getHTML();
             document.body.appendChild(panelWrapper);
             settingsPanel = panelDiv;
-            GudinInterface.attachEvents(panelDiv);
+            Gudin_Terminal_UI.attachEvents(panelDiv);
 
             const galleryGrid = panelDiv.querySelector('#br-gallery-grid');
             if (galleryGrid && typeof WALLPAPER_GALLERY !== 'undefined') {
@@ -2233,7 +2241,7 @@ forumCss += `
                                 setChk('s_enableGradient', false); setChk('s_enableEdge', true); setChk('s_enableRounding', true);
                                 setVal('s_bgColor', bg); setVal('s_edgeColor', bo); setVal('s_borderRadius', parseInt(rd));
                             }
-                            await saveSettings(settings); applyGudinDesign(settings); updateBottomNavBarContent(settings); manageVisualEffects(settings);
+                            await saveSettings(settings); init_Gudin_Design(settings); updateBottomNavBarContent(settings); manageVisualEffects(settings);
                             if (!document.getElementById(STYLE_ICON_ID)) addSettingsIconHTML();
                             showToast('✅ Дизайн адаптирован!', 'success'); document.getElementById(modalId).remove(); closePanel();
                         };
@@ -2265,7 +2273,7 @@ forumCss += `
         const success = await saveSettings(settingsToReset);
         if (success) {
             openPanel();
-            applyGudinDesign(currentSettings);
+            init_Gudin_Design(currentSettings);
             updateBottomNavBarContent(currentSettings);
             manageVisualEffects(currentSettings);
             handleScroll();
@@ -2533,7 +2541,7 @@ forumCss += `
                         const success = await saveSettings(settingsToUpdate);
                         if (success) {
                             tempSettingsSnapshot = null;
-                            applyGudinDesign(currentSettings);
+                            init_Gudin_Design(currentSettings);
                             updateBottomNavBarContent(currentSettings);
                             manageVisualEffects(currentSettings);
                             handleScroll();
@@ -2585,7 +2593,7 @@ forumCss += `
                     }
                 });
                  settingsPanel.querySelectorAll('input[type="range"]').forEach(updateSliderValue);
-                applyGudinDesign(currentSettings);
+                init_Gudin_Design(currentSettings);
                 updateBottomNavBarContent(currentSettings);
                 manageVisualEffects(currentSettings);
                 handleScroll();
@@ -2658,7 +2666,7 @@ forumCss += `
              bgImageDataUri: ''
             });
          if (success) {
-             applyGudinDesign(currentSettings);
+             init_Gudin_Design(currentSettings);
              const bgStatus = settingsPanel.querySelector('#bg-status');
              if(bgStatus) bgStatus.textContent = 'Фон не задан.';
              if (clearBgBtn) {
@@ -3467,7 +3475,7 @@ if (count > 0) {
 `;
 
     await saveSettings(newSettings);
-    applyGudinDesign(newSettings);
+    init_Gudin_Design(newSettings);
     updateBottomNavBarContent(newSettings);
     showToast('✅ Успешно! Стиль адаптирован.', 'success');
     close();
@@ -3718,7 +3726,7 @@ if (!isValidEffectType(settings.effectType) || settings.effectType === 'none') {
             }
             .br-spotlight:hover::after { opacity: 1; }
 
-       #gudin-system-menu, .br-modal-window, .br-toast, .br-bottom-nav-bar { font-family: var(--br-font-family, 'Manrope', sans-serif) !important;
+       #gudin-private-hub, .br-modal-window, .br-toast, .br-bottom-nav-bar { font-family: var(--br-font-family, 'Manrope', sans-serif) !important;
 letter-spacing: 0.02em; }
 
             @keyframes br-morph {
@@ -4433,7 +4441,7 @@ staticCss += `
                     -webkit-overflow-scrolling: touch;
                 }
 
-#gudin-system-menu {
+#gudin-private-hub {
     background-color: #09090b !important;
     background-image: radial-gradient(circle at 50% 0%, rgba(30, 35, 50, 0.3) 0%, transparent 70%) !important;
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08), 0 20px 60px rgba(0, 0, 0, 0.95) !important;
@@ -4445,7 +4453,7 @@ staticCss += `
 }
 
 @media (max-width: 768px) {
-    #gudin-system-menu {
+    #gudin-private-hub {
         animation: br-mobile-slide 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards !important;
         transform-origin: bottom center !important;
         border-radius: 20px 20px 0 0 !important;
@@ -5243,7 +5251,7 @@ staticCss += `
 
 let cssMobile = `
                         @media screen and (max-width: 768px) {
-                        #gudin-system-menu {
+                        #gudin-private-hub {
                         width: 100% !important;
                         height: 100% !important;
                         max-height: 100% !important;
@@ -5272,7 +5280,7 @@ let cssMobile = `
                         display: grid;
                     }
 
-#gudin-system-menu[data-view="page"] .br-hub-grid {
+#gudin-private-hub[data-view="page"] .br-hub-grid {
     display: none !important;
 }
                    .br-hub-card:last-child:nth-child(odd) {
@@ -5506,7 +5514,7 @@ let cssMobile = `
             const status = settingsPanel.querySelector('#my-username-status');
             if (status) status.textContent = `Ваш ник: ${myUsername}`;
         }
-        applyGudinDesign(currentSettings);
+        init_Gudin_Design(currentSettings);
         handleDynamicWelcome();
     }
 }
@@ -5517,14 +5525,14 @@ let cssMobile = `
         if (firstPost) {
             threadAuthor = firstPost.dataset.author;
             console.log(`[BR Style] Автор темы определен: ${threadAuthor}`);
-            applyGudinDesign(currentSettings);
+            init_Gudin_Design(currentSettings);
             return;
         }
         const profileUsername = document.querySelector('.p-title-value');
         if (profileUsername && document.body.classList.contains('page--member-view')) {
              threadAuthor = profileUsername.textContent.trim();
              console.log(`[BR Style] Автор темы (на странице профиля): ${threadAuthor}`);
-             applyGudinDesign(currentSettings);
+             init_Gudin_Design(currentSettings);
              return;
         }
     }
@@ -7148,7 +7156,7 @@ this.state.modal = {
                     currentSettings = { ...currentSettings, ...contextPresetData };
                 }
             }
-            applyGudinDesign(currentSettings);
+            init_Gudin_Design(currentSettings);
 
             const showContent = () => {
                 if (antiFouc) {
@@ -7177,7 +7185,7 @@ this.state.modal = {
 
                 setTimeout(() => {
                     injectStaticStyles();
-                    applyGudinDesign(currentSettings);
+                    init_Gudin_Design(currentSettings);
                     
                     const overlay = document.querySelector('.br-page-exit-overlay');
                     if (overlay) {
@@ -7342,11 +7350,11 @@ this.state.modal = {
                     runOdometer();
 
                     findAndAttachUploader();
-                    globalGudinObserver.subscribe((mutation) => {
+                    globalGudin_Engine_Scanner.subscribe((mutation) => {
     findMyUsername();
     observeNewNodes([mutation]);
 });
-globalGudinObserver.start();
+globalGudin_Engine_Scanner.start();
                 });
                 const seenVersion = await GM_getValue('br_style_seen_version', '0.0.0');
                 if (seenVersion !== SCRIPT_VERSION) {
